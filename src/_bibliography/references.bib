@@ -31,624 +31,99 @@
 
 % TODO : check no duplicates & no false positives on HAL
 
-
-%
-% ---- PREPRINTS ----
-% 
-
-@article{audemard2026integrating-083,
-  year     = {2026},
-  title    = {Integrating metagenome-scale metabolic modelling and metabolomics to identify biochemical interactions in Microcystis phycospheres},
-  author   = {Audemard, Juliette and Creusot, Nicolas and Leloup, Julie and Duval, Charlotte and Halary, Sébastien and Mary, Lou and Eon, Mélissa and Forjonel, Thomas and Mouffok, Mohamed and Puppo, Rémy and Belmonte, Elodie and Gautier, Véronique and Got, Jeanne and Lefebvre, Marie and Markov, Gabriel V and Muller, Coralie and Marie, Benjamin and Diémé, Binta and Frioux, Clémence},
-  doi      = {10.64898/2026.03.18.712574},
-  journal  = {BioRxiv},
-  note     = {preprint},
-  abstract = {Favoured by global changes, freshwater cyanobacterial harmful blooms generate major ecological, economical and public health challenges. Microcystis, one of the most widespread cyanobacterial genera, grows within a phycosphere where specialised interactions with its microbiome occur, and are suspected to influence bloom appearance and its potential toxicity. Using a combination of metagenomic, metabolomic and metabolic modelling, we characterised the phycospheres of twelve Microcystis strains isolated from a French pond. The distribution of metabolic reactions within Microcystis was consistent with their genospecies, whereas the metabolic landscape at the community level diverged from cyanobacterial phylogeny indicating functional decoupling between cyanobacteria and their associated microbiomes. Phycosphere-associated bacteria substantially expand the metabolic repertoire of the system, while maintaining functional redundancy within and across communities. On the other hand, metabolomic profiles were largely driven by cyanobacterial metabolic outputs. Metabolic modelling, together with the identification of toxic specialised metabolites produced by specific biosynthetic gene clusters, further highlighted differences in metabolic potential among phycospheres. Together, these findings deepen the understanding of {\textbackslash} emph\{Microcystis\}' phycosphere functioning, demonstrate the value of multi-omics systems biology approaches, and underscore the ecological relevance of interspecies and inter-phycosphere metabolic interactions as a structuring process in bloom-associated microbiomes.},
-  keywords = {preprint}
-}
-
-@article{bulka2026prediction-b28,
-    year     = {2026},
-    title    = {Prediction of source nutrients for microorganisms using metabolic networks},
-    author   = {Bulka, Olivia and Ghassemi Nedjad, Chabname and Paulevé, Loïc and Prigent, Sylvain and Frioux, Clémence},
-    journal  = {{arXiv}},
-    doi      = {10.48550/arxiv.2602.21993},
-    eprint   = {2602.21993},
-    note     = {preprint},
-    abstract = {Metagenomics has lowered the barrier to microbial discovery--enabling the identification of novel microbes without isolation--but cultures remain imperative for the deep study of microbes. Cultivation and isolation of non-model microbes remains a major challenge, despite advances in high-throughput culturomic methods. The quantity of simultaneous experimental variables is constrained by time and resources, but the list can be reduced using computational biology. Given an annotated genome, metabolic modelling can be used to predict source nutrients required for the growth of a microbe, which acts as an initial screen to inform culture and isolation experiments. This chapter provides an overview of metabolic networks and modelling and how they can be used to predict the nutrient requirements of a microorganism, followed by a sample protocol using a toy metabolic network, which is then expanded to a genome-scale metabolic network application. These methods can be applied to any metabolic network of interest--which in turn can be created from any genome of interest--and are a starting point for experimental validation of source nutrients required for microorganisms that remain uncultivated to date.},
-    keywords = {preprint}
-}
-
-@article{Muller.2026,
-    year     = {2026},
-    title    = {{MetaNetMap: automatic mapping of metabolomic data onto metabolic networks}},
-    author   = {Muller, Coralie and Audemard, Juliette and Prigent, Sylvain and Frioux, Clémence},
-    doi      = {10.64898/2026.01.05.697697},
-    journal  = {BioRxiv},
-    note     = {preprint},
-    abstract = {{Metabolic networks represent genome-derived information about the biochemical reactions that cells are capable of performing. Mapping omic data onto these networks is important to refine model simulations. However, metabolomic data mapping remains very challenging due to difficulties in identifier reconciliation between annotation profiles and metabolic networks. MetaNetMap is a Python package designed to automatise the process of mapping metabolomic data onto metabolic networks. It includes several layers of identifier matching, the use of customisable databases, and molecular ontology integration to suggest the most matches between experimentally-identified metabolites and molecules defined in the network. We demonstrate its usability and the quality of automated mapping using two datasets.}},
-    keywords = {preprint}
-}
-
-@article{Sola.2025,
-    year     = {2025},
-    title    = {{NeighborFinder: an R package inferring local microbial network around a species of interest}},
-    author   = {Sola, Mathilde and Paravel, Adrien and Auger, Sandrine and Chatel, Jean-Marc and Oñate, Florian Plaza and Chatelier, Emmanuelle Le and Leclerc, Marion and Veiga, Patrick and Frioux, Clémence and Mariadassou, Mahendra and Berland, Magali},
-    journal  = {BioRxiv},
-    doi      = {10.64898/2025.12.05.692507},
-    abstract = {{Motivation: Understanding interactions from microbiome data is a central aspect in microbial ecology, as it provides insights into ecosystem stability, disease mechanisms, and can be used to design synthetic communities. Current network inference tools reconstruct global networks from co-abundance data, which means they capture the overall correlation structure for the entire set of taxa considered. These approaches are computationally intensive and suboptimal when the focus is on the local neighborhood of specific taxa of interest. Results: We introduce NeighborFinder, a local network inference method that enables the targeted discovery of direct neighbors around a species of interest. Using cross-validated multiple linear regression with ℓ1 penalty and microbiome specific filters, our approach infers interpretable species-centered interactions, with F1 score ≥ 0.95 on simulated cohorts ranging from 250 to 1000 samples. This method is well-suited for large metagenomic datasets and is particularly valuable for exploratory studies where the targeted hypotheses outweigh the need for global community structure. The approach complements existing methods by being a biologically intuitive and computationally efficient. Availability and Implementation: The R package is freely available on GitHub: https://github.com/ metagenopolis/NeighborFinder. The data and source code used to calculate performances and produce the use case example in this paper can be found respectively at: https://doi.org/10.57745/UPITJ0 and https://doi.org/10.57745/HJLWW4.}},
-    note = {preprint}
-}
-
-@article{sola2026hydrogen-94d,
-  year     = {2026},
-  title    = {Hydrogen metabolism shapes gut microbiome into health-associated configurations},
-  author   = {Sola, Mathilde and Hiol, Anne and Vitali, Giacomo and Fromentin, Sébastien and Gilles, Marine and Chatelier, Emmanuelle Le and Morabito, Christian and Oñate, Florian Plaza and Pons, Nicolas and Quinquis, Benoît and Thirion, Florence and Denis, Jordan and Léonard, Renaud and Cruaud, Corinne and Wincker, Patrick and Oliveira, Pedro H and Consortium, Le French Gut and Masselot, Catherine Robbe and Almeida, Mathieu and Blottière, Hervé and Doré, Joël and Ehrlich, Dusko S and Benamouzig, Robert and Frioux, Clémence and Berland, Magali and Veiga, Patrick},
-  journal  = {BioRxiv},
-  doi      = {10.64898/2026.05.05.722951},
-  note     = {preprint},
-  abstract = {Abstract The human gut microbiome exhibits reproducible configurations, yet the ecological forces connecting them to health remain unclear. Here, using enterosignature-based stratification of 5,170 individuals from the Le French Gut cohort, we identified hydrogen disposal as a key determinant of population-scale microbiome configurations, independently replicated in a meta-cohort (n = 5,107). Microbial configurations followed a continuum of hydrogen recycling capacity and redox-associated functions, aligned with dietary patterns and health indicators. Methanogenesis-dominant partitions were associated with more favorable health profiles, whereas acetogenesis-enriched partitions exhibited features of low-grade inflammation, and increased digestive symptoms, perceived stress and antidepressant use. Experimental characterization of mucin profiles highlighted differences across partitions and alterations in Bacteroides -enriched configurations. Together, our findings support an ecological host-microbiome framework linking hydrogen metabolism, redox ecology, and host health, offering microbiome-informed targets for precision intervention. Graphical abstract}
-}
-
-@article{Belcour.2025,
-    year     = {2025},
-    title    = {{Estimating consensus proteomes and metabolic functions from taxonomic affiliations}},
-    author   = {Belcour, Arnaud and Hamon-Giraud, Pauline and Mataigne, Alice and Ruiz, Baptiste and Cunff, Yann Le and Got, Jeanne and Awhangbo, Lorraine and Lebreton, Mégane and Frioux, Clémence and Dittami, Simon and Dabert, Patrick and Siegel, Anne and Blanquart, Samuel},
-    journal  = {bioRxiv},
-    doi      = {10.1101/2022.03.16.484574},
-    abstract = {{Metabarcoding, and metagenomic sequencing have enabled the characterization of highly diverse environmental communities. The challenge of estimating the metabolic functions carried out by these communities has led to the development of several state-of-the-art methods, most of which are tailored to a specific gene marker. However, the increasing diversity of approaches resulting from advances in sequencing technologies drives the need for methods capable of handling heterogeneous microbial community data. Moreover, predictions often depend on their internal analysis pipelines and are influenced by the underlying databases, which link marker genes to specific functional annotations. This limits users’ ability to evaluate the quality of predictions by tracing internal data and processes. Finally, users are constrained by the specific annotations provided by these methods (e.g. EC numbers), limiting their ability to conduct further specialized analyses based on intermediate results. EsMeCaTa predicts consensus proteomes and their associated functions from taxonomic affiliations. A key feature of EsMeCaTa is its explainability and flexibility. To support the flexible integration of heterogeneous sequencing data, EsMeCaTa utilizes taxonomic affiliations obtained through analyses of diverse sequencing datasets. To provide insight into the knowledge available for each taxonomic affliation and to interpret the relevance of predicted functions, EsMeCaTa identifies a taxonomic rank within a given affliation that is suffciently represented by documented proteomes in the UniProt database. The proteins of the UniProt proteomes are clustered and filtered according to a threshold to create consensus proteomes. These consensus proteomes are automatically annotated with functional information (e.g., EC numbers, GO terms) but they are also designed to be used in further customized annotation workflows. Functional annotations are reported in a functional table, which can be enriched with taxon abundances to generate comprehensive functional profiles. EsMeCaTa predictions have been validated using multiple datasets and compared to a state-of-the-art method. Additionally, it was applied to a novel metabarcoding dataset from a methanogenic reactor, characterizing the microbial community and biogas production across different time points and intake condition. Our results demonstrate the link between biogas production, intake condition and the dynamics of the metabolic functions predicted by EsMeCaTa in the microbial communities.}},
-    pages    = {2022.03.16.484574},
-    hal_id   = {hal-03697249},
-    note     = {preprint},
-    eprint   = {https://www.biorxiv.org/content/10.1101/2022.03.16.484574v2.full.pdf},
-    keywords = {preprint}
-}
-
-@article{Belliardo2025.09.12.675765,
-    author       = {Belliardo, Carole and Maurice, Nicolas and Pere, Arthur and Mondy, Samuel and Franc, Alain and Bailly-Bechet, Marc and Lemaitre, Claire and Vicedomini, Riccardo and Frigerio, Jean-Marc and Abad, Pierre and Sherman, David and Belmonte, Elodie and Salin, Franck and Frioux*, Clémence and Danchin*, Etienne},
-    title        = {Accurate MAG reconstruction from complex soil microbiome through combined short- and HiFi long-reads metagenomics},
-    elocation-id = {2025.09.12.675765},
-    year         = {2025},
-    doi          = {10.1101/2025.09.12.675765},
-    publisher    = {Cold Spring Harbor Laboratory},
-    abstract     = {Background: Advances in high-fidelity long-read (HiFi-LR) sequencing technologies offer unprecedented opportunities to uncover the microbial genomic diversity of complex environments, such as soils. While short-read (SR) sequencing has enabled broad insights at gene-level diversity, the inherently limited read length constrains the reconstruction of complete genomes. Conversely, HiFi-LR sequencing enhances the quality and completeness of metagenome-assembled genomes (MAGs), enabling higher-resolution taxonomic and functional annotation. However, the cost and relatively low throughput of HiFi-LR sequencing can limit genome recovery, particularly at the binning stage, where coverage depth is critical. Results: Here, we present a novel hybrid strategy that differs from classical hybrid assemblies, where SR and LR reads are jointly used at the assembly step. Instead, we use high-depth SR data to improve the binning of HiFi-LR contigs. Using both SR and HiFi-LR metagenomic data generated from a tunnel-cultivated soil sample, we demonstrate that SR-derived coverage information significantly improves the binning of HiFi-LR assemblies. This results in a substantial increase in the number and quality of recovered MAGs compared to using HiFi-LR data alone and an uncomparable improvement compared to SR data alone. Conclusion: Our findings highlight the power of combining SR and LR in highly diverse environments, such as soil, not for hybrid assembly per se, but to enhance the downstream binning process. The combination of SR and LR data substantially improves the downstream binning process and overall genome recovery. Importantly, this approach underscores the potential of leveraging the vast amount of publicly available Illumina metagenomic datasets. Completing existing SR resources with PacBio HiFi sequencing can maximise assembly contiguity and binning accuracy using massive amounts of SR data already generated. This highlights a practical and forward-looking strategy for microbiome research, where novel LR technologies will bring new value to previous short-read efforts.Competing Interest StatementThe authors have declared no competing interest.French National Research Agency, ANR-22-PEAE-0011, ANR-15-IDEX-01},
-    url          = {https://www.biorxiv.org/content/early/2025/09/12/2025.09.12.675765},
-    eprint       = {https://www.biorxiv.org/content/early/2025/09/12/2025.09.12.675765.full.pdf},
-    journal      = {BioRxiv},
-    hal_id       = {},
-    note     = {preprint},
-    keywords     = {preprint}
-}
-
-@article{labarthe:hal-05613501,
-  title               = {{From Concept to Perspective: Digital Twins of Microbial Systems}},
-  author              = {Labarthe, Simon and Creusot, Nicolas and Frioux, Cl{\'e}mence and Gautreau, Guillaume and Desmond-Le Qu{\'e}m{\'e}ner, Elie and Sala, Lorenzo and Yabo, Agust{\'i}n G. and Dou, Paul and Capson-Tojo, Gabriel and Dugat-Bony, Eric and Fernandez Diaz, Andrea and Mezache, Mathieu and Muller, Coralie and Tatho Djeanou, Sthyve Junior and Yeghiazaryan, Sahak and Harmand, J{\'e}r{\^o}me and Mouret, Jean-Roch and Nidelet, Thibault and Prigent, Sylvain and Cottret, Ludovic and Goelzer, Anne and Lesur Kupin, Isabelle and Rigottier-Gois, Lionel and Salin, Franck and Baldazzi, Valentina and Casenave, C{\'e}line and Falentin, H{\'e}l{\`e}ne and Mariadassou, Mahendra and Mu{\~n}oz-Tamayo, Rafael and Popova, Milka and Rapaport, Alain and Sherman, David James and Steyer, Jean-Philippe and Vacher, Corinne},
-  url                 = {https://hal.inrae.fr/hal-05613501},
-  hal_local_reference = {MISTEA - Axe syst{\`e}mes dynamiques},
-  year                = {2026},
-  month               = May,
-  keywords            = {preprint},
-  note                = {preprint},
-  pdf                 = {https://hal.inrae.fr/hal-05613501v1/file/PCJ-sample.pdf},
-  hal_id              = {hal-05613501},
-  hal_version         = {v1}
-}
-
 %
 % ----- ARTICLES -----
 %
-@article{Duncan.2025,
-    year      = {2025},
-    title     = {{Detecting signatures underlying the composition of biological data}},
-    author    = {Duncan, Anthony and Koon, Wing and Sidorczuk, Katarzyna and Quince, Christopher and Frioux, Clémence and Hildebrand, Falk},
-    journal   = {Nucleic Acids Research},
-    issn      = {0305-1048},
-    doi       = {10.1093/nar/gkaf1388},
-    pmid      = {41459746},
-    pmcid     = {PMC12746108},
-    abstract  = {{Biological compositional data is inherently multidimensional and therefore difficult to visualize and interpret. To allow for the automatic decomposition of large compositional data and to capture gradients in co-occurring features, called signatures, we developed a new software package ‘cvaNMF’. Our benchmarks on synthetic data show the effectiveness of cross-validation and our novel signature-similarity method to identify a suitable decomposition using non-negative matrix factorization (NMF). This software provides a complete set of tools to identify and visualize biologically informative signatures which we demonstrate in a wide range of microbial and cellular datasets: ‘Enterosignatures’ detected in gut metagenomes differentiated human hosts with diverse diseases; five ‘terrasignatures’ from rhizosphere metagenomes differentiated root- or soil-associated microbiomes, while being refined enough to infer geographic distances between plants. Large-scale data from >13 000 metagenomes representing 25 biomes were decomposed into environmental and host-associated microbiomes based on five newly discovered signatures. Finally, analysis of the cell composition of non-small cell lung cancer samples allowed separation of cancerous and inflamed tissues based on four cell-type signatures. Graphical Abstract}},
-    pages     = {gkaf1388},
-    number    = {22},
-    volume    = {53},
-    keywords  = {na},
-    hal_id    = {hal-05451323},
-    local-url = {file://localhost/Users/cfrioux/Documents/Papers%20Library/Duncan-Detecting%20signatures%20underlying%20the%20composition%20of%20biological%20data-2025-Nucleic%20Acids%20Research.pdf}
+
+@article{NUNEZ2026101132,
+title = {A comprehensive genome-scale metabolic model for porcine cells as a tool for process optimization and design in the cultivated meat industry},
+journal = {Future Foods},
+volume = {14},
+pages = {101132},
+year = {2026},
+issn = {2666-8335},
+doi = {https://doi.org/10.1016/j.fufo.2026.101132},
+url = {https://www.sciencedirect.com/science/article/pii/S2666833526002339},
+author = {Diego Núñez and Camila Krauss and Maria {Gomes Fernandes} and Judith Vlaar and Amy Cochrane and José Ricardo Pérez and Alejandro Maass and Eduardo Agosin and Sebastián N. Mendoza},
+keywords = {Cultivated meat, Porcine cell metabolism, Genome-scale metabolic model, Sus scrofa, Culture media design, Bioreactor modeling, Flux balance analysis},
+abstract = {Cultivated meat has the potential to reduce the environmental footprint of conventional meat production; however, the high cost of culture media remains a major obstacle to large-scale implementation, motivating efforts to better understand and optimize cellular metabolism. Here, we present iSSC2487, a curated, high-quality genome-scale metabolic model of Sus scrofa comprising 2487 genes, 9124 reactions, and 6790 metabolites distributed across nine compartments, which correctly reproduces the essentiality of the nine classical essential amino acids. Measured uptake and secretion rates from 40 L fed-batch cultures of porcine embryonic stem cells were used to constrain dynamic flux balance (dFBA) simulations, which reproduced the observed bioreactor trajectories of biomass and extracellular metabolites. Using this data-constrained framework, we mapped the intracellular routing of carbon and nitrogen, resolved how it differs across the early, exponential, and late growth phases, and identified medium modifications that reduce cost. The flux distributions revealed a progressive rerouting of carbon and an overflow metabolism centered on glutamine, in which transamination generated the secreted alanine, glutamate, and aspartate, with byproduct secretion declining as growth rates decreased. iSSC2487 identified a minimal medium containing 27 essential nutrients. We provide a feed formulation aligned with metabolic requirements, which would cost 10 USD L⁻¹, whereas mixed-integer linear programming (MILP)-based optimization further lowered the predicted cost to 6.5 USD L⁻¹ (35% reduction). Although these model-guided predictions remain to be tested, the reconstruction provides a general scaffold for future work, including omics integration and bioprocess optimization in porcine cell culture.}
 }
 
-
-@article{Andreani.2025,
-    year     = {2025},
-    title    = {{Modeling the emergent metabolic potential of soil microbiomes in Atacama landscapes}},
-    author   = {Andreani-Gerard, Constanza M. and Jiménez, Natalia E. and Palma, Ricardo and Muller, Coralie and Hamon-Giraud, Pauline and Cunff, Yann Le and Cambiazo, Verónica and González, Mauricio and Siegel, Anne and Frioux*, Clémence and Maass*, Alejandro},
-    journal  = {Environmental Microbiome},
-    doi      = {10.1186/s40793-025-00749-8},
-    abstract = {{Soil microbiomes harbor complex communities from which diverse ecological roles unfold, shaped by syntrophic interactions. Unraveling the mechanisms and consequences of such interactions and the underlying biochemical transformations remains challenging due to niche multidimensionality. The Atacama Desert is an extreme environment that includes unique combinations of stressful abiotic factors affecting microbial life. In particular, the Talabre Lejía transect is a natural laboratory for understanding microbiome composition, functioning, and adaptation. We propose a computational framework for the simulation of the metabolic potential of microbiomes, as a proxy of how communities are prepared to respond to the environment. Through the coupling of taxonomic and functional profiling, community-wide and genome-resolved metabolic modeling, and regression analyses, we identify key metabolites and species from six contrasting soil samples across the Talabre Lejía transect. We highlight the functional redundancy of whole metagenomes, which act as a gene reservoir, from which site-specific adaptations emerge at the species level. We also link the physicochemistry from the puna and the lagoon samples to metabolic machineries that are likely crucial for sustaining microbial life in these unique environmental conditions. We further provide an abstraction of community composition and structure for each site that allowed us to describe microbiomes as resilient or sensitive to environmental shifts, through putative cooperation events. Our results show that the study of multi-scale metabolic potential, together with targeted modeling, contributes to elucidating the role of metabolism in the adaptation of microbial communities. Our framework was designed to handle non-model microorganisms, making it suitable for any (meta)genomic dataset that includes high-quality environmental data for enough samples.}},
-    pages    = {142},
-    number   = {1},
-    volume   = {20},
-    hal_id   = {hal-05368332},
-    keywords = {na}
-    }
-
-@article{Maurice.2025,
-    year     = {2025},
-    title    = {{Mapler: A pipeline for assessing assembly quality in taxonomically rich metagenomes sequenced with HiFi reads}},
-    author   = {Maurice, Nicolas and Lemaitre, Claire and Vicedomini, Riccardo and Frioux, Clémence},
-    journal  = {Bioinformatics},
-    doi      = {10.1093/bioinformatics/btaf334},
-    pmid     = {40478660},
-    abstract = {{Metagenome assembly seeks to reconstruct the most high-quality genomes from sequencing data of microbial ecosystems. Despite technological advancements that facilitate assembly, such as Hi-Fi long reads, the process remains challenging in complex environmental samples consisting of hundreds to thousands of populations. Mapler is a metagenome assembly and evaluation pipeline with a focus on evaluating the quality of Hi-Fi long read metagenome assemblies. It incorporates several state-of-the-art metrics, as well as novel metrics assessing the diversity that remains uncaptured by the assembly process. Mapler facilitates the comparison of assembly strategies and helps identify methodological bottlenecks that hinder genome reconstruction. Mapler is open source and publicly available under the AGPL-3.0 licence at https://github.com/Nimauric/Mapler. Source code is implemented in Python and Bash as a Snakemake pipeline. A snapshot of the code is available on Software Heritage at swh:1:snp:df4f5f02e22ebbab285ec14af58d4d88436ee5d6. Supplementary data are available at Bioinformatics online.}},
-    pages    = {btaf334},
-    hal_id   = {hal-05288241},
-    keywords = {na}
+@article{Jimenez2026,
+abstract = {Motivated by the applications of genome-scale metabolic models (GEMs) for biological discovery and metabolic engineering, several approaches have been developed for automatic generation of draft GEMs. However, most of these methods are not optimized for their use in multicellular eukaryotes and their performance for this task is unclear. In this work we present a comparative analysis of seven automated reconstruction tools (AuReMe, CarveMe, merlin, ModelSEED, Pathway Tools, RAVEN and Reconstructor) applied to three multicellular eukaryotes: the mosquito Aedes aegypti , the CHO (Chinese Hamster Ovary) cell line from Cricetulus griseus and the brown algae Ectocarpus siliculosus . Evaluation of these tools was based on metrics for network size, functionality, consistency, representation of organelle-specific functions and organism-specific metabolites, annotation quality and execution time. We find that methods differ strongly in a trade-off between model functionality and representation of eukaryotic features such as compartmentalization and organism-specific metabolism, with no single approach excelling at both. Our work aims at providing a practical resource to guide researchers in selecting methods for draft generation tailored to organism characteristics and research goals.},
+author = {Jim{\'{e}}nez, Natalia E. and Espinoza, Mikael and Mej{\'{i}}as, Sebasti{\'{a}}n and Mendoza, Sebasti{\'{a}}n N. and Segovia, Ignacia and Salgado, J. Cristian and Conca, Carlos and Gerdtzen, Ziomara. P.},
+doi = {10.1186/s12859-026-06455-7},
+file = {:C$\backslash$:/Users/Omen/Desktop/s12859-026-06455-7.pdf:pdf},
+issn = {14712105},
+journal = {BMC Bioinformatics},
+number = {1},
+pages = {153},
+title = {{Selecting methods for draft GEM generation in multicellular eukaryotes: a comparative analysis}},
+volume = {27},
+year = {2026}
 }
 
-
-@article{GhassemiNedjad.2025,
-    year     = {2025},
-    title    = {{Seed2LP: seed inference in metabolic networks for reverse ecology applications}},
-    author   = {Ghassemi Nedjad, Chabname and Bolteau, Mathieu and Bourneuf, Lucas and Paulevé, Loïc and Frioux, Clémence},
-    journal  = {Bioinformatics},
-    doi      = {10.1093/bioinformatics/btaf140},
-    pmid     = {40163742},
-    abstract = {{A challenging problem in microbiology is to determine nutritional requirements of microorganisms and culture them, especially for the microbial dark matter detected solely with culture-independent methods. The latter foster an increasing amount of genomic sequences that can be explored with reverse ecology approaches to raise hypotheses on the corresponding populations. Building upon genome scale metabolic networks (GSMNs) obtained from genome annotations, metabolic models predict contextualised phenotypes using nutrient information. We developed the tool Seed2LP, addressing the inverse problem of predicting source nutrients, or seeds, from a GSMN and a metabolic objective. The originality of Seed2LP is its hybrid model, combining a scalable and discrete Boolean approximation of metabolic activity, with the numerically accurate flux balance analysis (FBA). Seed inference is highly customisable, with multiple search and solving modes, exploring the search space of external and internal metabolites combinations. Application to a benchmark of 107 curated GSMNs highlights the usefulness of a logic modelling method over a graph-based approach to predict seeds, and the relevance of hybrid solving to satisfy FBA constraints. Focusing on the dependency between metabolism and environment, Seed2LP is a computational support contributing to address the multifactorial challenge of culturing possibly uncultured microorganisms. Seed2LP is available on https://github.com/bioasp/seed2lp. Supplementary data are available at Bioinformatics online.}},
-    pages    = {btaf140},
-    keywords = {na}
-}
-
-@article{Lecomte.2024,
-    year        = {2024},
-    title       = {{Revealing the dynamics and mechanisms of bacterial interactions in cheese production with metabolic modelling}},
-    author      = {Lecomte, Maxime and Cao, Wenfan and Aubert, Julie and Sherman, David James and Falentin, Hélène and Frioux, Clémence and Labarthe, Simon},
-    journal     = {Metabolic Engineering},
-    issn        = {1096-7176},
-    doi         = {10.1016/j.ymben.2024.02.014},
-    pmid        = {38460783},
-    abstract    = {{Cheese taste and flavour properties result from complex metabolic processes occurring in microbial communities. A deeper understanding of such mechanisms makes it possible to improve both industrial production processes and end-product quality through the design of microbial consortia. In this work, we caracterise the metabolism of a three-species community consisting of Lactococcus lactis, Lactobacillus plantarum and Propionibacterium freudenreichii during a seven-week cheese production process. Using genome-scale metabolic models and omics data integration, we modeled and calibrated individual dynamics using monoculture experiments, and coupled these models to capture the metabolism of the community. This model accurately predicts the dynamics of the community, enlightening the contribution of each microbial species to organoleptic compound production. Further metabolic exploration revealed additional possible interactions between the bacterial species. This work provides a methodological framework for the prediction of community-wide metabolism and highlights the added value of dynamic metabolic modeling for the comprehension of fermented food processes.}},
-    keywords    = {},
-    local-url   = {file://localhost/Users/cfrioux/Documents/Papers%20Library/Lecomte-Revealing%20the%20dynamics%20and%20mechanisms%20of%20bacterial%20interactions%20in%20cheese%20production%20with%20metabolic%20modelling-2024-Metabolic%20Engineering_3.pdf},
-    hal_id      = {hal-04088301},
-    hal_version = {v2},
-    keywords    = {na}
-    }
-
-
-@article{Cerk.2024,
-    year     = {2024},
-    title    = {{Community‐scale models of microbiomes: Articulating metabolic modelling and metagenome sequencing}},
-    author   = {Cerk, Klara and Ugalde‐Salas, Pablo and Ghassemi Nedjad, Chabname and Lecomte, Maxime and Muller, Coralie and Sherman, David J. and Hildebrand, Falk and Labarthe, Simon and Frioux, Clémence},
-    journal  = {Microbial Biotechnology},
-    issn     = {1751-7915},
-    doi      = {10.1111/1751-7915.14396},
-    pmid     = {38243750},
-    pmcid    = {PMC10832553},
-    abstract = {{Building models is essential for understanding the functions and dynamics of microbial communities. Metabolic models built on genome‐scale metabolic network reconstructions (GENREs) are especially relevant as a means to decipher the complex interactions occurring among species. Model reconstruction increasingly relies on metagenomics, which permits direct characterisation of naturally occurring communities that may contain organisms that cannot be isolated or cultured. In this review, we provide an overview of the field of metabolic modelling and its increasing reliance on and synergy with metagenomics and bioinformatics. We survey the means of assigning functions and reconstructing metabolic networks from (meta‐)genomes, and present the variety and mathematical fundamentals of metabolic models that foster the understanding of microbial dynamics. We emphasise the characterisation of interactions and the scaling of model construction to large communities, two important bottlenecks in the applicability of these models. We give an overview of the current state of the art in metagenome sequencing and bioinformatics analysis, focusing on the reconstruction of genomes in microbial communities. Metagenomics benefits tremendously from third‐generation sequencing, and we discuss the opportunities of long‐read sequencing, strain‐level characterisation and eukaryotic metagenomics. We aim at providing algorithmic and mathematical support, together with tool and application resources, that permit bridging the gap between metagenomics and metabolic modelling. With this review we articulate two important topics in the context of deciphering the role and functions of microbial communities: metabolic modeling and metagenomics. We survey the methodological approaches, highlight the changes raised by third generation sequencing, and provide resources to bridge the gaps between the sequencing reads and the models.}},
-    pages    = {e14396},
-    number   = {1},
-    volume   = {17},
-    keywords = {na}
-}
-
-@article{Frioux.2023,
-    year     = {2023},
-    title    = {{Enterosignatures define common bacterial guilds in the human gut microbiome}},
-    author   = {Frioux, Clémence and Ansorge, Rebecca and Özkurt, Ezgi and Ghassemi Nedjad, Chabname and Fritscher, Joachim and Quince, Christopher and Waszak, Sebastian M. and Hildebrand, Falk},
-    journal  = {Cell Host \& Microbe},
-    issn     = {1931-3128},
-    doi      = {10.1016/j.chom.2023.05.024},
-    abstract = {{The human gut microbiome composition is generally in a stable dynamic equilibrium, but it can deteriorate into dysbiotic states detrimental to host health. To disentangle the inherent complexity and capture the ecological spectrum of microbiome variability, we used 5,230 gut metagenomes to characterize signatures of bacteria commonly co-occurring, termed enterosignatures (ESs). We find five generalizable ESs dominated by either Bacteroides, Firmicutes, Prevotella, Bifidobacterium, or Escherichia. This model confirms key ecological characteristics known from previous enterotype concepts, while enabling the detection of gradual shifts in community structures. Temporal analysis implies that the Bacteroides-associated ES is “core” in the resilience of westernized gut microbiomes, while combinations with other ESs often complement the functional spectrum. The model reliably detects atypical gut microbiomes correlated with adverse host health conditions and/or the presence of pathobionts. ESs provide an interpretable and generic model that enables an intuitive characterization of gut microbiome composition in health and disease.}},
-    keywords = {na},
-    HAL_ID = {hal-04141300},
-    HAL_VERSION = {v1},
-    pdf = {https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(23)00217-2#}
-}
-
-@article{Belcour.2023,
-    year     = {2023},
-    title    = {{Inferring and comparing metabolism across heterogeneous sets of annotated genomes using AuCoMe}},
-    author   = {Belcour, Arnaud and Got, Jeanne and Aite, Méziane and Delage, Ludovic and Collén, Jonas and Frioux, Clémence and Leblanc, Catherine and Dittami, Simon M and Blanquart, Samuel and Markov, Gabriel V and Siegel, Anne},
-    journal  = {Genome Research},
-    issn     = {1088-9051},
-    doi      = {10.1101/gr.277056.122},
-    abstract = {{Comparative analysis of genome-scale metabolic networks (GSMNs) may yield important information on the biology, evolution, and adaptation of species. However, it is impeded by the high heterogeneity of the quality and completeness of structural and functional genome annotations, which may bias the results of such comparisons. To address this issue, we developed AuCoMe, a pipeline to automatically reconstruct homogeneous GSMNs from a heterogeneous set of annotated genomes without discarding available manual annotations. We tested AuCoMe with three data sets, one bacterial, one fungal, and one algal, and showed that it successfully reduces technical biases while capturing the metabolic specificities of each organism. Our results also point out shared and divergent metabolic traits among evolutionarily distant algae, underlining the potential of AuCoMe to accelerate the broad exploration of metabolic evolution across the tree of life.}},
-    pages    = {},
-    keywords = {na},
-    HAL_ID = {hal-03778267},
-    HAL_VERSION = {v2},
-    pdf = {https://genome.cshlp.org/content/early/2023/07/10/gr.277056.122.full.pdf+html}
-}
-
-@article{Kleinjan2022, 
-    year = {2022}, 
-    title = {{Insights into the potential for mutualistic and harmful host‐microbe interactions affecting brown alga freshwater acclimation}}, 
-    author = {KleinJan, Hetty and Frioux, Clémence and Califano, Gianmaria and Aite, Méziane and Fremy, Enora and Karimi, Elham and Corre, Erwan and Wichard, Thomas and Siegel, Anne and Boyen, Catherine and Dittami, Simon M.}, 
-    journal = {Molecular Ecology}, 
-    issn = {0962-1083}, 
-    doi = {10.1111/mec.16766}, 
-    pmid = {36326449}, 
-    abstract = {{Microbes can modify their hosts’ stress tolerance, thus potentially enhancing their ecological range. An example of such interactions is Ectocarpus subulatus, one of the few freshwater‐tolerant brown algae. This tolerance is partially due to its (un)cultivated microbiome. We investigated this phenomenon by modifying the microbiome of laboratory‐grown E. subulatus using mild antibiotic treatments, which affected its ability to grow in low salinity. Low salinity acclimation of these algal‐bacterial associations was then compared. Salinity significantly impacted bacterial and viral gene expression, albeit in different ways across algal‐bacterial communities. In contrast, gene expression of the host and metabolite profiles were affected almost exclusively in the freshwater‐intolerant algal‐bacterial communities. We found no evidence of bacterial protein production that would directly improve algal stress tolerance. However, vitamin K synthesis is one possible bacterial service missing specifically in freshwater‐intolerant cultures in low salinity. In this condition, we also observed a relative increase in bacterial transcriptomic activity and the induction of microbial genes involved in the biosynthesis of the autoinducer AI‐1, a quorum‐sensing regulator. This could have resulted in dysbiosis by causing a shift in bacterial behavior in the intolerant algal‐bacterial community. Together, these results provide two promising hypotheses to be examined by future targeted experiments. Although they apply only to the specific study system, they offer an example of how bacteria may impact their host's stress response.}}, 
-    keywords = {na},
-    HAL_ID = {hal-03868898},
-    pdf = {https://inria.hal.science/hal-03868898},
-    HAL_VERSION = {v1}
-}
-
-@article{Fournier.2022, 
-    year = {2022}, 
-    title = {{The functional microbiome of grapevine throughout plant evolutionary history and lifetime}}, 
-    author = {Fournier, Paola and Pellan, Lucile and Barroso-Bergadà, Didac and Bohan, David A. and Candresse, Thierry and Delmotte, François and Dufour, Marie-Cécile and Lauvergeat, Virginie and Marrec, Claire Le and Marais, Armelle and Martins, Guilherme and Masneuf-Pomarède, Isabelle and Rey, Patrice and Sherman, David and This, Patrice and Frioux, Clémence and Labarthe, Simon and Vacher, Corinne}, 
-    journal = {Advances in Ecological Research}, 
-    issn = {0065-2504}, 
-    doi = {10.1016/bs.aecr.2022.09.001}, 
-    abstract = {{European grapevine is a complex holobiont composed of two plant genomes, that of the scion (Vitis vinifera L.) and the rootstock (Vitis spp.), and a multitude of microbial genomes that collectively form the microbiome. The grapevine microbiome has been extensively described over the last decade, primarily using metabarcoding approaches. Unfortunately, metabarcoding data alone provide little information on microbial functions and outcomes of plant-microbe interactions. Here we review knowledge about the microorganisms that have a demonstrated influence, positive or negative, on the performance of the grapevine holobiont. Our review encompasses bacteria, filamentous fungi, yeasts, oomycetes and viruses. It covers aboveground and belowground microorganisms, including arbuscular mycorrhizal and ectomycorrhizal fungi. We focus on taxa and functions that protect the plant against pathogens and pests, promote growth, increase tolerance to abiotic stresses and highlight those involved in disease and decline. As the outcomes of plant-microbe interactions are labile, we examine the dynamics and functions of grapevine-microbiome interactions over both the plant lifetime and the plant evolutionary history, beginning with plant domestication. Based on the knowledge and gaps we identify, we suggest field sampling designs, culture-based experiments, molecular tools and theoretical analysis methods, including shotgun metagenomics and network models, that could be used in future research to uncover and leverage the full functional potential of the grapevine microbiome.}}, 
-    keywords = {na},
-    HAL_ID = {hal-03858395},
-    HAL_VERSION = {v1},
-    pdf = {https://inria.hal.science/hal-03858395}
-}
-
-@inproceedings{Frioux.2023sga,
-    year           = {2023},
-    title          = {{Accelerating metabolic models evaluation with statistical metamodels: application to Salmonella infection models}},
-    author         = {Frioux, Clémence and Huet, Sylvie and Labarthe, Simon and Martinelli, Julien and Malou, Thibault and Sherman, David and Taupin, Marie-Luce and Ugalde-Salas, Pablo},
-    booktitle      = {ESAIM: Proceedings and Surveys},
-    booktitleaddon = {CEMRACS 2021 - Data Assimilation and Reduced Modeling for High Dimensional Problems},
-    doi            = {10.1051/proc/202373187},
-    abstract       = {{Mathematical and numerical models are increasingly used in microbial ecology to model the fate of microbial communities in their ecosystem. These models allow to connect in a mechanistic framework species-level informations, such as the microbial genomes, with macro-scale features, such as species spatial distributions or metabolite gradients. Numerous models are built upon species-level metabolic models that predict the metabolic behaviour of a microbe by solving an optimization problem knowing its genome and its nutritional environment. However, screening the community dynamics with these metabolic models implies to solve such an optimization problem by species at each time step, leading to a significant computational load further increased by several orders of magnitude when spatial dimensions are added. In this paper, we propose a statistical framework based on Reproducing Kernel Hilbert Space (RKHS) metamodels that are used to provide fast approximations of the original metabolic model. The metamodel can replace the optimization step in the system dynamics, providing comparable outputs at a much lower computational cost. We will first build a system dynamics model of a simplified gut microbiota composed of a unique commensal bacterial strain in interaction with the host and challenged by a Salmonella infection. Then, the machine learning method will be introduced, and particularly the ANOVA-RKHS that will be exploited to achieve variable selection and model parsimony. A training dataset will be constructed with the original system dynamics model and hyper-parameters will be carefully chosen to provide fast and accurate approximations of the original model. Finally, the accuracy of the trained metamodels will be assessed, in particular by comparing the system dynamics outputs when the original model is replaced by its metamodel. The metamodel allows an overall relative error of 4.71\% but reducing the computational load by a speed-up factor higher than 45, while correctly reproducing the complex behaviour occurring during Salmonella infection. These results provide a proof-of-concept of the potentiality of machine learning methods to give fast approximations of metabolic model outputs and pave the way towards PDE-based spatio-temporal models of microbial communities including microbial metabolism and host-microbiota-pathogen interactions.}},
-    pages          = {187--217},
-    volume         = {73},
-    keywords       = {na},
-    PDF            = {https://hal.inrae.fr/hal-03635862/file/main.pdf},
-    HAL_ID         = {hal-03635862},
-    HAL_VERSION    = {v1}
-}
-@inproceedings{LeClanche.2026,
-    author         = {Le Clanche, Ulysse and Atay, Melvin Selim and Bannier, Elise and Baudot, Anaïs and Bellenger, Léa and Bodrug, Alexandra and Chaffron, Samuel and Charpentier, Eric and Corre, Erwan and Frioux, Clémence and Lardenois, Aurélie and Lemoine, Frédéric and Maumet, Camille and Noël, Cyril and Paul-Gilloteaux, Perrine and Simion, Paul and Térézol, Morgane and Dameron, Olivier and Gaignard, Alban},
-    booktitle      = {LLMs4KGOE, Workshop on LLM-driven Knowledge Graph and Ontology Engineering},
-    booktitleaddon = {Accepted},
-    doi            = {TBD},
-    isbn           = {},
-    issn           = {},
-    pages          = {},
-    publisher      = {},
-    title          = {Ground-truth Construction and Evaluation of LLM Contribution to Life Sciences Tool Annotation},
-    url            = {},
-    volume         = {},
-    year           = {2026},
-    hal_id         = {},
-    keywords       = {na},
-    abstract       = {{Metadata are explicit representations of the meaning of data or of what aspects of the data are important. Their quality directly impacts data retrieval and exploitation, so curation across the whole data life cycle is critical. Curation complexity is such that human experts need assistance from automatic tools, but the design of such tools is challenging. In this work, we compare the respective capabilities of domain experts and of an Large Language Model (LLM) agent to generate useful domain-specific annotations for classifying, indexing, and searching scientific resources. We ground this question in the life sciences domain with the bio.tools software registry and the companion EDAM reference ontology. Our contribution is twofold: i) we propose a ground-truth dataset of semantically annotated life sciences software, created and validated by a set-group of experts, and ii) we study the relative contribution of an LLM agent to this ground-truth, compared to a group of domain experts. Our results show the complementarity between domain experts and LLMs: most annotations from the ground-truth were provided by the experts, but the LLM also contributed annotations that were overlooked by the experts. Some relevant annotations provided by either experts or LLM do not correspond to any class in the reference ontology, highlighting the need for curation at the level of both metadata and ontologies.}},
-    venue          = {Dubrovnik, Croatia},
-    pdf            = {https://hal.inria.fr/hal-01557347/document}
-}
-
-@article{Karimi.2021, 
-    year = {2021}, 
-    title = {{Robustness analysis of metabolic predictions in algal microbial communities based on different annotation pipelines}}, 
-    author = {Karimi, Elham and Geslain, Enora and Belcour, Arnaud and Frioux, Clémence and Aïte, Méziane and Siegel, Anne and Corre, Erwan and Dittami, Simon M.}, 
-    journal = {PeerJ}, 
-    issn = {2167-8359}, 
-    doi = {10.7717/peerj.11344}, 
-    pmid = {33996285}, 
-    abstract = {{Animals, plants, and algae rely on symbiotic microorganisms for their development and functioning. Genome sequencing and genomic analyses of these microorganisms provide opportunities to construct metabolic networks and to analyze the metabolism of the symbiotic communities they constitute. Genome-scale metabolic network reconstructions rest on information gained from genome annotation. As there are multiple annotation pipelines available, the question arises to what extent differences in annotation pipelines impact outcomes of these analyses. Here, we compare five commonly used pipelines (Prokka, MaGe, IMG, DFAST, RAST) from predicted annotation features (coding sequences, Enzyme Commission numbers, hypothetical proteins) to the metabolic network-based analysis of symbiotic communities (biochemical reactions, producible compounds, and selection of minimal complementary bacterial communities). While Prokka and IMG produced the most extensive networks, RAST and DFAST networks produced the fewest false positives and the most connected networks with the fewest dead-end metabolites. Our results underline differences between the outputs of the tested pipelines at all examined levels, with small differences in the draft metabolic networks resulting in the selection of different microbial consortia to expand the metabolic capabilities of the algal host. However, the consortia generated yielded similar predicted producible compounds and could therefore be considered functionally interchangeable. This contrast between selected communities and community functions depending on the annotation pipeline needs to be taken into consideration when interpreting the results of metabolic complementarity analyses. In the future, experimental validation of bioinformatic predictions will likely be crucial to both evaluate and refine the pipelines and needs to be coupled with increased efforts to expand and improve annotations in reference databases.}}, 
-    pages = {e11344}, 
-    volume = {9}, 
-    keywords = {na},
-    url = {https://peerj.com/articles/11344/},
-    PDF = {https://peerj.com/articles/11344.pdf}
-}
-
-@article{Hildebrand.2021, 
-    year = {2021}, 
-    title = {{Dispersal strategies shape persistence and evolution of human gut bacteria}}, 
-    author = {Hildebrand, Falk and Gossmann, Toni I. and Frioux, Clémence and Özkurt, Ezgi and Myers, Pernille Neve and Ferretti, Pamela and Kuhn, Michael and Bahram, Mohammad and Nielsen, Henrik Bjørn and Bork, Peer}, 
-    journal = {Cell Host \& Microbe}, 
-    issn = {1931-3128}, 
-    doi = {10.1016/j.chom.2021.05.008}, 
-    pmid = {34111423}, 
-    abstract = {{Human gut bacterial strains can co-exist with their hosts for decades, but little is known about how these microbes persist and disperse, and evolve thereby. Here, we examined these processes in 5,278 adult and infant fecal metagenomes, longitudinally sampled in individuals and families. Our analyses revealed that a subset of gut species is extremely persistent in individuals, families, and geographic regions, represented often by locally successful strains of the phylum Bacteroidota. These “tenacious” bacteria show high levels of genetic adaptation to the human host but a high probability of loss upon antibiotic interventions. By contrast, heredipersistent bacteria, notably Firmicutes, often rely on dispersal strategies with weak phylogeographic patterns but strong family transmissions, likely related to sporulation. These analyses describe how different dispersal strategies can lead to the long-term persistence of human gut microbes with implications for gut flora modulations.}}, 
-    keywords = {na},
-    url = {https://doi.org/10.1016/j.chom.2021.05.008},
-    PDF = {https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(21)00236-5?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1931312821002365%3Fshowall%3Dtrue#},
-    HAL_ID = {hal-03438942}
-}
-
-@article{10.7554/elife.61968, 
-    title = {{Metage2Metabo, microbiota-scale metabolic complementarity for the identication of key species}}, 
-    author = {Belcour*, Arnaud and Frioux*, Clémence and Aite, Méziane and Bretaudeau, Anthony and Hildebrand, Falk and Siegel, Anne}, 
-    journal = {eLife}, 
-    doi = {10.7554/elife.61968}, 
-    pmid = {33372654}, 
-    abstract = {{To capture the functional diversity of microbiota, one must identify metabolic functions and species of interest within hundreds or thousands of microorganisms. We present Metage2Metabo (M2M) a resource that meets the need for de-novo functional screening of genome-scale metabolic networks (GSMNs) at the scale of a metagenome, and the identification of critical species with respect to metabolic cooperation. M2M comprises a flexible pipeline for the characterisation of individual metabolisms and collective metabolic complementarity. In addition, M2M identifies key species, that are meaningful members of the community for functions of interest. We demonstrate that M2M is applicable to collections of genomes as well as metagenome-assembled genomes, permits an efficient GSMN reconstruction with Pathway Tools, and assesses the cooperation potential between species. M2M identifies key organisms by reducing the complexity of a large-scale microbiota into minimal communities with equivalent properties, suitable for further analyses.}}, 
-    pages = {e61968}, 
-    volume = {9}, 
-    year = {2020},
-    url = {https://elifesciences.org/articles/61968},
-    PDF = {https://elifesciences.org/download/aHR0cHM6Ly9jZG4uZWxpZmVzY2llbmNlcy5vcmcvYXJ0aWNsZXMvNjE5NjgvZWxpZmUtNjE5NjgtdjIucGRmP2Nhbm9uaWNhbFVyaT1odHRwczovL2VsaWZlc2NpZW5jZXMub3JnL2FydGljbGVzLzYxOTY4/elife-61968-v2.pdf?_hash=EXsUlHXbjThDLgTcsexviMFFDldmHq8YSWWXdWRUaIY%3D},
-    HAL_ID = {hal-02395024}
-}
-
-@article{Frioux.2020jlpr, 
-    title = {{From bag-of-genes to bag-of-genomes: metabolic modelling of communities in the era of metagenome-assembled genomes}}, 
-    author = {Frioux, Clémence and Singh, Dipali and Korcsmaros, Tamas and Hildebrand, Falk}, 
-    journal = {Computational and Structural Biotechnology Journal}, 
-    issn = {2001-0370}, 
-    doi = {10.1016/j.csbj.2020.06.028}, 
-    pmid = {32670511}, 
-    abstract = {{ Metagenomic sequencing of complete microbial communities has greatly enhanced our understanding of the taxonomic composition of microbiotas. This has led to breakthrough developments in bioinformatic disciplines such as assembly, gene clustering, metagenomic binning of species genomes and the discovery of an incredible, so far undiscovered, taxonomic diversity. However, functional annotations and estimating metabolic processes from single species – or communities – is still challenging. Earlier approaches relied mostly on inferring the presence of key enzymes for metabolic pathways in the whole metagenome, ignoring the genomic context of such enzymes, resulting in the ‘bag-of-genes’ approach to estimate functional capacities of microbiotas. Here, we review recent developments in metagenomic bioinformatics, with a special focus on emerging technologies to simulate and estimate metabolic information, that can be derived from metagenomic assembled genomes. Genome-scale metabolic models can be used to model the emergent properties of microbial consortia and whole communities, and the progress in this area is reviewed. While this subfield of metagenomics is still in its infancy, it is becoming evident that there is a dire need for further bioinformatic tools to address the complex combinatorial problems in modelling the metabolism of large communities as a ‘bag-of-genomes’.}}, 
-    pages = {1722--1734}, 
-    volume = {18}, 
-    year = {2020},
-    url = {https://www.sciencedirect.com/science/article/pii/S2001037020303172?via%3Dihub},
-    PDF = {https://www.sciencedirect.com/science/article/pii/S2001037020303172/pdfft?md5=2853380b7d1f8beb03e3fa0676ec8dae&pid=1-s2.0-S2001037020303172-main.pdf},
-    HAL_ID = {hal-02883309}
-    }
-
-@article{Bahram.2020zm, 
-    title = {{Metagenomic assessment of the global distribution of bacteria and fungi}}, 
-    author = {Bahram, Mohammad and Netherway, Tarquin and Frioux, Clémence and Ferretti, Pamela and Coelho, Luis Pedro and Geisen, Stefan and Bork, Peer and Hildebrand, Falk}, 
-    journal = {Environmental Microbiology}, 
-    issn = {1462-2912}, 
-    doi = {10.1111/1462-2920.15314}, 
-    pmid = {33185929}, 
-    abstract = {{Bacteria and fungi are of uttermost importance in determining environmental and host functioning. Despite close interactions between animals, plants, their associated microbiomes, and the environment they inhabit, the distribution and role of bacteria and especially fungi across host and environments as well as the cross‐habitat determinants of their community compositions remain little investigated. Using a uniquely broad global dataset of 13,483 metagenomes, we analyzed the microbiome structure and function of 25 host‐associated and environmental habitats, focusing on potential interactions between bacteria and fungi. We found that the metagenomic relative abundance ratio of bacteria‐to‐fungi is a distinctive microbial feature of habitats. Compared to fungi, the cross‐habitat distribution pattern of bacteria was more strongly driven by habitat type. Fungal diversity was depleted in host‐associated communities compared with those in the environment, particularly terrestrial habitats, whereas this diversity pattern was less pronounced for bacteria. The relative gene functional potential of bacteria or fungi reflected their diversity patterns and appeared to depend on a balance between substrate availability and biotic interactions. Alongside helping to identify hotspots and sources of microbial diversity, our study provides support for differences in assembly patterns and processes between bacterial and fungal communities across different habitats. This article is protected by copyright. All rights reserved.}}, 
-    year = {2020},
-    url = {https://sfamjournals.onlinelibrary.wiley.com/doi/10.1111/1462-2920.15314},
-    PDF = {https://sfamjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1462-2920.15314},
-    HAL_ID = {hal-03033570}
-    }
-
-@article{Frioux.2020, 
-    title = {{Using automated reasoning to explore the metabolism of unconventional organisms: a first step to explore host–microbial interactions}}, 
-    author = {Frioux, Clémence and Dittami, Simon M and Siegel, Anne}, 
-    journal = {Biochemical Society Transactions}, 
-    issn = {0300-5127}, 
-    doi = {10.1042/bst20190667}, 
-    pmid = {32379295}, 
-    abstract = {{Systems modelled in the context of molecular and cellular biology are difficult to represent with a single calibrated numerical model. Flux optimisation hypotheses have shown tremendous promise to accurately predict bacterial metabolism but they require a precise understanding of metabolic reactions occurring in the considered species. Unfortunately, this information may not be available for more complex organisms or non-cultured microorganisms such as those evidenced in microbiomes with metagenomic techniques. In both cases, flux optimisation techniques may not be applicable to elucidate systems functioning. In this context, we describe how automatic reasoning allows relevant features of an unconventional biological system to be identified despite a lack of data. A particular focus is put on the use of Answer Set Programming, a logic programming paradigm with combinatorial optimisation functionalities. We describe its usage to over-approximate metabolic responses of biological systems and solve gap-filling problems. In this review, we compare steady-states and Boolean abstractions of metabolic models and illustrate their complementarity via applications to the metabolic analysis of macro-algae. Ongoing applications of this formalism explore the emerging field of systems ecology, notably elucidating interactions between a consortium of microbes and a host organism. As the first step in this field, we will illustrate how the reduction in microbiotas according to expected metabolic phenotypes can be addressed with gap-filling problems.}}, 
-    pages = {901--913}, 
-    number = {3}, 
-    volume = {48}, 
-    url = {https://portlandpress.com/biochemsoctrans/article-abstract/48/3/901/223844/Using-automated-reasoning-to-explore-the?redirectedFrom=fulltext},
-    year = {2020},
-    HAL_ID = {hal-02569935},
-    pdf = {https://hal.science/hal-02569935v1/document}}
-    }
-
-@article{Dittami2020,
-    abstract = {Brown algae are multicellular photosynthetic stramenopiles that colonize marine rocky shores worldwide. Ectocarpus sp. Ec32 has been established as a genomic model for brown algae. Here we present the genome and metabolic network of the closely related species, Ectocarpus subulatus K{\"{u}}tzing, which is characterized by high abiotic stress tolerance. Since their separation, both strains show new traces of viral sequences and the activity of large retrotransposons, which may also be related to the expansion of a family of chlorophyll-binding proteins. Further features suspected to contribute to stress tolerance include an expanded family of heat shock proteins, the reduction of genes involved in the production of halogenated defence compounds, and the presence of fewer cell wall polysaccharide-modifying enzymes. Overall, E. subulatus has mainly lost members of gene families down-regulated in low salinities, and conserved those that were up-regulated in the same condition. However, 96{\%} of genes that differed between the two examined Ectocarpus species, as well as all genes under positive selection, were found to encode proteins of unknown function. This underlines the uniqueness of brown algal stress tolerance mechanisms as well as the significance of establishing E. subulatus as a comparative model for future functional studies.},
-    author = {Dittami, Simon M. and Corre, Erwan and Brillet-Gu{\'{e}}guen, Loraine and Lipinska, Agnieszka P. and Pontoizeau, No{\'{e}} and Aite, Meziane and Avia, Komlan and Caron, Christophe and Cho, Chung Hyun and Coll{\'{e}}n, Jonas and Cormier, Alexandre and Delage, Ludovic and Doubleau, Sylvie and Frioux, Cl{\'{e}}mence and Gobet, Ang{\'{e}}lique and Gonz{\'{a}}lez-Navarrete, Irene and Groisillier, Agn{\`{e}}s and Herv{\'{e}}, C{\'{e}}cile and Jollivet, Didier and KleinJan, Hetty and Leblanc, Catherine and Liu, Xi and Marie, Dominique and Markov, Gabriel V. and Minoche, Andr{\'{e}} E. and Monsoor, Misharl and Pericard, Pierre and Perrineau, Marie Mathilde and Peters, Akira F. and Siegel, Anne and Sim{\'{e}}on, Amandine and Trottier, Camille and Yoon, Hwan Su and Himmelbauer, Heinz and Boyen, Catherine and Tonon, Thierry},
-    doi = {10.1016/j.margen.2020.100740},
-    issn = {18747787},
-    journal = {Marine Genomics},
-    month = {jan},
-    pages = {100740},
-    title = {{The genome of Ectocarpus subulatus – A highly stress-tolerant brown alga}},
-    PDF = {https://www.sciencedirect.com/science/article/pii/S1874778720300015/pdfft?md5=f649fadc48011123f15f7f2ea4cb0677&pid=1-s2.0-S1874778720300015-main.pdf},
-    url = {https://linkinghub.elsevier.com/retrieve/pii/S1874778720300015},
-    year = {2020},
-    HAL_ID = {hal-02866117}
-    }
-
-@article{Burgunter-Delamare2020,
-    abstract = {Brown algae are key components of marine ecosystems and live in association with bacteria that are essential for their growth and development. Ectocarpus siliculosus is a genetic and genomic model for brown algae. Here we use this model to start disentangling the complex interactions that may occur between the algal host and its associated bacteria. We report the genome-sequencing of 10 alga-associated bacteria and the genome-based reconstruction of their metabolic networks. The predicted metabolic capacities were then used to identify metabolic complementarities between the algal host and the bacteria, highlighting a range of potentially beneficial metabolite exchanges between them. These putative exchanges allowed us to predict consortia consisting of a subset of these ten bacteria that would best complement the algal metabolism. Finally, co-culture experiments were set up with a subset of these consortia to monitor algal growth as well as the presence of key algal metabolites. Although we did not fully control but only modified bacterial communities in our experiments, our data demonstrated a significant increase in algal growth in cultures inoculated with the selected consortia. In several cases, we also detected, in algal extracts, the presence of key metabolites predicted to become producible via an exchange of metabolites between the alga and the microbiome. Thus, although further methodological developments will be necessary to better control and understand microbial interactions in Ectocarpus, our data suggest that metabolic complementarity is a good indicator of beneficial metabolite exchanges in the holobiont.},
-    author = {Burgunter-Delamare, Bertille and KleinJan, Hetty and Frioux, Cl{\'{e}}mence and Fremy, Enora and Wagner, Margot and Corre, Erwan and {Le Salver}, Alicia and Leroux, C{\'{e}}dric and Leblanc, Catherine and Boyen, Catherine and Siegel, Anne and Dittami, Simon M.},
-    doi = {10.3389/FMARS.2020.00085},
-    issn = {2296-7745},
-    journal = {Frontiers in Marine Science},
-    keywords = {Ectocarpus siliculosus,Genome-scale metabolic networks,holobiont,metabolic complementarity,symbiotic/mutualistic bacteria},
-    month = {feb},
-    pages = {85},
-    publisher = {Frontiers},
-    title = {{Metabolic Complementarity Between a Brown Alga and Associated Cultivable Bacteria Provide Indications of Beneficial Interactions}},
-    volume = {7},
-    PDF = {https://www.frontiersin.org/articles/10.3389/fmars.2020.00085/pdf},
-    url = {https://www.frontiersin.org/articles/10.3389/fmars.2020.00085},
-    year = {2020},
-    HAL_ID = {hal-02866101}
-    }
-
-@article{Negre2019,
-    abstract = {Understanding growth mechanisms in brown algae is a current scientific and economic challenge that can benefit from the modeling of their metabolic networks. The sequencing of the genomes of Saccharina japonica and Cladosiphon okamuranus has provided the necessary data for the reconstruction of Genome–Scale Metabolic Networks (GSMNs). The same in silico method deployed for the GSMN reconstruction of Ectocarpus siliculosus to investigate the metabolic capabilities of these two algae, was used. Integrating metabolic profiling data from the literature, we provided functional GSMNs composed of an average of 2230 metabolites and 3370 reactions. Based on these GSMNs and previously published work, we propose a model for the biosynthetic pathways of the main carotenoids in these two algae. We highlight, on the one hand, the reactions and enzymes that have been preserved through evolution and, on the other hand, the specificities related to brown algae. Our data further indicate that, if abscisic acid is produced by Saccharina japonica, its biosynthesis pathway seems to be different in its final steps from that described in land plants. Thus, our work illustrates the potential of GSMNs reconstructions for formalizing hypotheses that can be further tested using targeted biochemical approaches.},
-    author = {N{\`{e}}gre, Delphine and Aite, M{\'{e}}ziane and Belcour, Arnaud and Frioux, Cl{\'{e}}mence and Brillet-Gu{\'{e}}guen, Loraine and Liu, Xi and Bordron, Philippe and Godfroy, Olivier and Lipinska, Agnieszka P. and Leblanc, Catherine and Siegel, Anne and Dittami, Simon M. and Corre, Erwan and Markov, Gabriel V.},
-    doi = {10.3390/antiox8110564},
-    issn = {20763921},
-    journal = {Antioxidants},
-    keywords = {Abscisic acid,Brown algae,Cladosiphon okamuranus,Data integration,Fucoxanthin,Genome-Scale metabolic networks (GSMNs),Oxygenated carotenoid biosynthesis,Saccharina japonica},
-    month = {nov},
-    number = {11},
-    pages = {564},
-    publisher = {Multidisciplinary Digital Publishing Institute},
-    title = {{Genome–scale metabolic networks shed light on the carotenoid biosynthesis pathway in the brown algae saccharina japonica and cladosiphon okamuranus}},
-    url = {https://www.mdpi.com/2076-3921/8/11/564},
-    PDF = {https://www.mdpi.com/2076-3921/8/11/564/pdf},
-    volume = {8},
-    year = {2019},
-    HAL_ID = {hal-02395080}
-    }
-
-@article{Laniau2017,
-    author = {Laniau, Julie and Frioux, Clémence and Nicolas, Jacques and Baroukh, Caroline and Cortes, María Paz and Got, Jeanne and Trottier, Camille and Eveillard, Damien and Siegel, Anne},
-    doi = {10.7717/peerj.3860},
-    issn = {21678359},
-    journal = {PeerJ},
-    keywords = {Answer Set Programming,Constraint-based analysis,Essential metabolite,Graph-based analysis,Metabolic networks},
-    number = {10},
-    title = {Combining graph and flux-based structures to decipher phenotypic essential metabolites within metabolic networks},
-    volume = {2017},
-    year = {2017},
-    PDF = {https://peerj.com/articles/3860.pdf},
-    HAL_ID = {hal-01635688}
-}
-
-@article{Prigent2017,
-    author = {Prigent, Sylvain and Frioux, Clémence and Dittami, Simon M. and Thiele, Sven and Larhlimi, Abdelhalim and Collet, Guillaume and Gutknecht, Fabien and Got, Jeanne and Eveillard, Damien and Bourdon, Jérémie and Plewniak, Frédéric and Tonon, Thierry and Siegel, Anne},
-    doi = {10.1371/journal.pcbi.1005276},
-    issn = {15537358},
-    journal = {PLoS Computational Biology},
-    number = {1},
-    title = {Meneco, a Topology-Based Gap-Filling Tool Applicable to Degraded Genome-Wide Metabolic Networks},
-    volume = {13},
-    year = {2017},
-    PDF = {http://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1005276&type=printable},
-    HAL_ID = {hal-01449100}
-}
-
-@article{Haikarainen2014,
-    author = {Haikarainen, Teemu and Frioux, Clémence and Zhnag, Li-Qing and Li, Duo-Chuan and Papageorgiou, Anastassios C.},
-    doi = {10.1016/j.bbapap.2013.11.014},
-    issn = {15709639},
-    journal = {Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics},
-    number = {2},
-    pages = {422--429},
-    title = {Crystal structure and biochemical characterization of a manganese superoxide dismutase from Chaetomium thermophilum},
-    volume = {1844},
-    year = {2014},
-    pdf = {https://github.com/cfrioux/cfrioux.github.io/tree/master/data/papers/haikarainen2014.pdf},
-}
-
-@article{Aite2018,
-    author = {Aite, Méziane AND Chevallier, Marie AND Frioux, Clémence AND Trottier, Camille AND Got, Jeanne AND Cortés, María Paz AND Mendoza, Sebastián N. AND Carrier, Grégory AND Dameron, Olivier AND Guillaudeux, Nicolas AND Latorre, Mauricio AND Loira, Nicolás AND Markov, Gabriel V. AND Maass, Alejandro AND Siegel, Anne},
-    journal = {PLOS Computational Biology},
-    publisher = {Public Library of Science},
-    title = {Traceability, reproducibility and wiki-exploration for “à-la-carte” reconstructions of genome-scale metabolic models},
-    year = {2018},
-    month = {05},
-    volume = {14},
-    url = {https://doi.org/10.1371/journal.pcbi.1006146},
-    pages = {1-25},
-    abstract = {Author summary Genome-scale metabolic models describe an organism’s metabolism. Building good models requires the integration of all relevant available information, obtained by exploring different data types and biological databases. This process is not straightforward and choices are made along the way, for example, which data is analyzed, with what tools. It matters that all reconstruction steps are well documented so that models can be fully exploited by the community. Having this metadata allows other researchers to reproduce, improve or reuse a model as a blueprint to create new ones. Sadly, this information is usually scattered and its proper distribution is the exception rather than the norm when using “à la carte” pipelines that combine main platforms and individual tools. We created a platform for “à la carte” metabolic model generation that responds to the need of transparency and data-connection in the field. It includes a battery of tools to exploit heterogeneous data through customizable pipelines. At each step, relevant information is stored, ensuring reproducibility and documentation of processes. Furthermore, exploration of models and metadata during the reconstruction process is facilitated through the automatic generation of local wikis. This view offers a user-friendly solution to iteratively explore genome-scale metabolic models produced with personalized pipelines and poorly interoperable tools. We highlight these benefits by building models for organisms with various input data. Among them, we show why the combination of heterogeneous information is necessary to elucidate specificities of Tisochrysis lutea, a eukaryotic microalga, for anti-oxidant production.},
-    number = {5},
-    doi = {10.1371/journal.pcbi.1006146},
-    PDF = {http://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006146&type=printable},
-    HAL_ID = {hal-01819150}
-
-}
-@article {Frioux2018,
-    pp_rank = {1},
-    author = {Frioux, Cl{\'{e}}mence and Fremy, Enora and Trottier, Camille and Siegel, Anne},
-    doi = {10.1093/bioinformatics/bty588},
-    issn = {1367-4803},
-    journal = {Bioinformatics},
-    month = {sep},
-    number = {17},
-    pages = {i934--i943},
-    publisher = {Oxford University Press},
-    title = {{Scalable and exhaustive screening of metabolic functions carried out by microbial consortia}},
-    url = {https://academic.oup.com/bioinformatics/article/34/17/i934/5093211},
-    volume = {34},
-    year = {2018},
-    PDF = {https://academic.oup.com/bioinformatics/article-pdf/34/17/i934/25702201/bty588.pdf},
-    HAL_ID = {hal-01871600}
-}
-
-@article{Frioux2019,
-    abstract = {Metabolic networks play a crucial role in biology since they capture all chemical reactions in an organism. While there are networks of high quality for many model organisms, networks for less studied organisms are often of poor quality and suffer from incompleteness. To this end, we introduced in previous work an answer set programming (ASP)-based approach to metabolic network completion. Although this qualitative approach allows for restoring moderately degraded networks, it fails to restore highly degraded ones. This is because it ignores quantitative constraints capturing reaction rates. To address this problem, we propose a hybrid approach to metabolic network completion that integrates our qualitative ASP approach with quantitative means for capturing reaction rates. We begin by formally reconciling existing stoichiometric and topological approaches to network completion in a unified formalism. With it, we develop a hybrid ASP encoding and rely upon the theory reasoning capacities of the ASP system clingo for solving the resulting logic program with linear constraints over reals. We empirically evaluate our approach by means of the metabolic network of Escherichia coli . Our analysis shows that our novel approach yields greatly superior results than obtainable from purely qualitative or quantitative approaches.},
-    author = {Frioux, Cl{\'{e}}mence and Schaub, Torsten and Schellhorn, Sebastian and Siegel, Anne and Wanko, Philipp},
-    doi = {10.1017/S1471068418000455},
-    issn = {1471-0684},
-    journal = {Theory and Practice of Logic Programming},
-    keywords = {answer set programming,bioinformatics,gap-filling,hybrid solving,linear programming,metabolic network},
-    month = {jan},
-    number = {01},
-    pages = {83--108},
-    publisher = {Cambridge University Press},
-    title = {{Hybrid metabolic network completion}},
-    url = {https://www.cambridge.org/core/product/identifier/S1471068418000455/type/journal{\_}article},
-    volume = {19},
-    year = {2019},
-    PDF = {https://arxiv.org/pdf/1808.04149.pdf},
-    OPTLINK = {http://arxiv.org/abs/1808.04149}
-}
 
 %
 % ----- CONFERENCES -----
 %
 
-@inproceedings{Frioux2017,
-    author = {Frioux, Clémence and Schaub, Torsten and Schellhorn, Sebastian and Siegel, Anne and Wanko, Philipp},
-    booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
-    pp_rank = {1},
-    doi = {10.1007/978-3-319-61660-5_28},
-    isbn = {9783319616599},
-    issn = {16113349},
-    pages = {308--321},
-    publisher = {Springer, Cham},
-    title = {Hybrid metabolic network completion},
-    url = {http://link.springer.com/10.1007/978-3-319-61660-5{\_}28},
-    volume = {10377 LNAI},
-    year = {2017},
-    HAL_ID = {hal-01557347},
-    PDF = {https://hal.inria.fr/hal-01557347/document}
-}
-@inproceedings{GNedjad.2025_cmsb,
-  year      = {2025},
-  author    = {Ghassemi Nedjad, Chabname and Mendoza, Sebastián Nelson and Frioux, Clémence and Paulevé, Loïc},
-  title     = {{Seed Inference in Interacting Microbial Communities Using Combinatorial Optimization}},
-  booktitle = {Computational Methods in Systems Biology, 23rd International Conference, CMSB 2025, Lyon, France, September 10–12, 2025, Proceedings},
-  isbn      = {9783032014351},
-  doi       = {10.1007/978-3-032-01436-8\_20},
-  abstract  = {{The behaviour of microorganisms and microbial communities can be abstracted by models combining a description of their metabolic capabilities as metabolic networks, and suitable computational or mathematical paradigms that further integrate simulation conditions. A major component of the latter is the composition of the environment or growth medium that can be referred to as seeds. Predicting the seeds from the metabolic network and an expected behaviour is an inverse problem that can be addressed with linear programming or logic paradigms such as Answer Set Programming (ASP). Here, we formalise seed prediction for microbial communities, taking into account that their members may interact positively through metabolite transfers, which may reduce the need for external seed metabolites. We address the problem with ASP and add a hybrid component ensuring the satisfiability of linear constraints. We explore the subset-minimality solving heuristic of the Clingo solver and develop two heuristics supporting priority of seeds over transfers. We present a proof of concept of seed inference in small-scale communities, and assess the scalability of the three heuristics at genome-scale. Overall, our work introduces a hybrid logic-linear model for seed inference in interacting microbial communities, and new heuristics for the exploration of the solution space with subset minimality optimisations.}},
-  pages     = {370--387},
-  volume    = {15959},
-  series    = {Lecture Notes in Computer Science},
-  publisher = {Springer, Cham},
-  keywords  = {},
-  HAL_ID    = {hal-05230510}
-  }
+
+%@inproceedings{GNedjad.2025_cmsb,
+%  year      = {2025},
+%  author    = {Ghassemi Nedjad, Chabname and Mendoza, Sebastián Nelson and Frioux, Clémence and Paulevé, Loïc},
+%  title     = {{Seed Inference in Interacting Microbial Communities Using Combinatorial Optimization}},
+%  booktitle = {Computational Methods in Systems Biology, 23rd International Conference, CMSB 2025, Lyon, France, September 10–12, 2025, Proceedings},
+%  isbn      = {9783032014351},
+%  doi       = {10.1007/978-3-032-01436-8\_20},
+%  abstract  = {{The behaviour of microorganisms and microbial communities can be abstracted by models combining a description of their metabolic capabilities as metabolic networks, and suitable computational or mathematical paradigms that further integrate simulation conditions. A major component of the latter is the composition of the environment or growth medium that can be referred to as seeds. Predicting the seeds from the metabolic network and an expected behaviour is an inverse problem that can be addressed with linear programming or logic paradigms such as Answer Set Programming (ASP). Here, we formalise seed prediction for microbial communities, taking into account that their members may interact positively through metabolite transfers, which may reduce the need for external seed metabolites. We address the problem with ASP and add a hybrid component ensuring the satisfiability of linear constraints. We explore the subset-minimality solving heuristic of the Clingo solver and develop two heuristics supporting priority of seeds over transfers. We present a proof of concept of seed inference in small-scale communities, and assess the scalability of the three heuristics at genome-scale. Overall, our work introduces a hybrid logic-linear model for seed inference in interacting microbial communities, and new heuristics for the exploration of the solution space with subset minimality optimisations.}},
+%  pages     = {370--387},
+%  volume    = {15959},
+%  series    = {Lecture Notes in Computer Science},
+%  publisher = {Springer, Cham},
+%  keywords  = {},
+%  HAL_ID    = {hal-05230510}
+%  }
 
 
 %
 % ----- BOOK CHAPTERS -----
 %
 
-@inbook{frioux2022_iste,
-    year       = {2022},
-    title      = {{Problèmes d'optimisation combinatoire pour l'étude du métabolisme}},
-    author     = {Frioux, Clémence and Siegel, Anne},
-    editor     = {Editions, ISTE},
-    bookauthor = {Cédric Lhoussaine,Élisabeth Remy},
-    booktitle  = {Approches symboliques de la modélisation et de l’analyse des systèmes biologiques},
-    isbn       = {9781789480290},
-    url        = {https://books.google.fr/books?id=z456EAAAQBAJ\&dq=holobiont+interaction\&lr=\&hl=fr\&source=gbs\_navlinks\_s},
-    pages      = {51-96},
-    series     = {SCIENCES},
-    publisher  = {ISTE Group},
-    language   = {French},
-    keywords   = {book},
-    HAL_ID     = {hal-03885249},
-    HAL_VERSION = {v1},
-    pdf        = {https://inria.hal.science/hal-03885249v1/document}
-}
+%@inbook{frioux2022_iste,
+%    year       = {2022},
+%    title      = {{Problèmes d'optimisation combinatoire pour l'étude du métabolisme}},
+%    author     = {Frioux, Clémence and Siegel, Anne},
+%    editor     = {Editions, ISTE},
+%    bookauthor = {Cédric Lhoussaine,Élisabeth Remy},
+%    booktitle  = {Approches symboliques de la modélisation et de l’analyse des systèmes biologiques},
+%    isbn       = {9781789480290},
+%    url        = {https://books.google.fr/books?id=z456EAAAQBAJ\&dq=holobiont+interaction\&lr=\&hl=fr\&source=gbs\_navlinks\_s},
+%    pages      = {51-96},
+%    series     = {SCIENCES},
+%    publisher  = {ISTE Group},
+%    language   = {French},
+%    keywords   = {book},
+%    HAL_ID     = {hal-03885249},
+%    HAL_VERSION = {v1},
+%    pdf        = {https://inria.hal.science/hal-03885249v1/document}
+%}
 
 %
 % ----- MANUSCRIPTS -----
 %
 
-@thesis{Frioux2018,
-    abstract = {Systems biology relies on computational biology to integrate knowledge and data, for a better understanding of organisms' physiology. Challenges reside in the applicability of methods and tools to non-model organisms, for instance in marine biology. Sequencing advances and the growing importance of elucidating microbiotas' roles, have led to an increased interest into these organisms. This thesis focuses on the modeling of the metabolism through networks, and of its functionality using graphs and constraints semantics. In particular, a first part presents work on gap-filling metabolic networks in the context of non-model organisms. A graph-based method is benchmarked and validated and a hybrid one is developed using Answer Set Programming (ASP) and linear programming. Such gap-filling is applied on algae and extended to decipher putative interactions between Ectocarpus siliculosus and a symbiotic bacterium. In this direction, the second part of the thesis aims at proposing formalisms and implementation of a tool for selecting and screening communities of interest within microbiotas. It enables to scale to large microbiotas and, with a two-step approach, to suggest symbionts that fit the desired objective. The modeling supports the computation of exchanges, and solving can cover the whole solution space. Applications are presented on the human gut microbiota and the selection of bacterial communities for a brown alga. Altogether, this thesis proposes modeling, software and biological applications using graph-based semantics to support the elaboration of hypotheses for elucidating the metabolism of organisms.},
-    author = {Frioux, Cl{\'{e}}mence},
-    month = {nov},
-    publisher = {Universit{\'{e}} de Rennes 1},
-    school = {Universit{\'{e}} de Rennes 1},
-    title = {{Investigating host-microbiota cooperation with gap-filling optimization problems}},
-    url = {https://hal.inria.fr/tel-01945853},
-    year = {2018},
-    HAL_ID = {tel-01945853},
-    PDF = {https://hal.inria.fr/tel-01945853/document}
-    }
+%@thesis{Frioux2018,
+%    abstract = {Systems biology relies on computational biology to integrate knowledge and data, for a better understanding of organisms' physiology. Challenges reside in the applicability of methods and tools to non-model organisms, for instance in marine biology. Sequencing advances and the growing importance of elucidating microbiotas' roles, have led to an increased interest into these organisms. This thesis focuses on the modeling of the metabolism through networks, and of its functionality using graphs and constraints semantics. In particular, a first part presents work on gap-filling metabolic networks in the context of non-model organisms. A graph-based method is benchmarked and validated and a hybrid one is developed using Answer Set Programming (ASP) and linear programming. Such gap-filling is applied on algae and extended to decipher putative interactions between Ectocarpus siliculosus and a symbiotic bacterium. In this direction, the second part of the thesis aims at proposing formalisms and implementation of a tool for selecting and screening communities of interest within microbiotas. It enables to scale to large microbiotas and, with a two-step approach, to suggest symbionts that fit the desired objective. The modeling supports the computation of exchanges, and solving can cover the whole solution space. Applications are presented on the human gut microbiota and the selection of bacterial communities for a brown alga. Altogether, this thesis proposes modeling, software and biological applications using graph-based semantics to support the elaboration of hypotheses for elucidating the metabolism of organisms.},
+%    author = {Frioux, Cl{\'{e}}mence},
+%    month = {nov},
+%    publisher = {Universit{\'{e}} de Rennes 1},
+%    school = {Universit{\'{e}} de Rennes 1},
+%    title = {{Investigating host-microbiota cooperation with gap-filling optimization problems}},
+%    url = {https://hal.inria.fr/tel-01945853},
+%    year = {2018},
+%    HAL_ID = {tel-01945853},
+%    PDF = {https://hal.inria.fr/tel-01945853/document}
+%    }
 
-@thesis{Frioux2025_hdr,
-    abstract   = {Microbiomes are complex ecosystems inhabited by hundreds to thousands of microbial populations that interact closely with each other, their environment, and, in some cases, a host. Because microbiomes provide essential services to their ecosystems, gaining a deeper understanding of them has broad applications in health, agroecology, and industry. Computational biology plays a key role in processing, analysing, and modelling the vast experimental data generated on microbial communities, often through culture-independent approaches based on DNA sequencing. This manuscript presents several contributions in this field, ranging from the analysis and dimensionality reduction of microbiome composition data to mechanistic models of microbial community dynamics. The concept of metabolic network is central to my work, as it enables the inference of microbial phenotypes by linking genetic sequences to metabolic reactions that transform molecules. By leveraging this concept and computational formalisms based on numerical methods or machine reasoning, we can generate predictions about microbiome functions, the interactions within them, and, more broadly, transform experimental data into simplified mechanistic models of the underlying biological systems.},
-    author     = {Frioux, Clémence},
-    month      = {09},
-    publisher  = {Universit{\'{e}} de Bordeaux},
-    school     = {Universit{\'{e}} de Bordeaux},
-    title      = {{HDR -- Machine reasoning, dimensionality reduction and numerical modelling applied to the exploration of metabolism in microbial communities}},
-    url        = {https://hal.inria.fr/tel-05285483},
-    eprinttype = {HAL},
-    eprint     = {https://hal.inria.fr/tel-05285483},
-    year       = {2025},
-    HAL_ID     = {tel-05285483},
-    pdf        = {https://hal.inria.fr/tel-05285483/document}
-    }
+
