@@ -1,6 +1,6 @@
 # Personal website
 
-Hosted on [snmendoza.github.io](https://snmendoza.github.io)
+Hosted on [snmendoza.github.io](https://snmendoz.github.io)
 
 ## Local build
 
@@ -11,7 +11,7 @@ cd src/
 
 ## Deployment
 
-Using [Github Actions](https://github.com/snmendoz/snmendoza.github.io/blob/master/.github/workflows/publish-to-github-pages.yaml)
+Using [Github Actions](https://github.com/snmendoz/snmendoz.github.io/blob/master/.github/workflows/publish-to-github-pages.yaml)
 
 * Following a push on the `master` branch
 * Building on `gh-pages` branch (configured in Settings → Options → Source of the repository)
