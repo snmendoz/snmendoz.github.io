@@ -1,6 +1,6 @@
 # Personal website
 
-Hosted on [snmendoza.github.io](https://snmendoz.github.io)
+Hosted on [snmendoz.github.io](https://snmendoz.github.io)
 
 ## Local build
 
