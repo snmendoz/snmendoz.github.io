@@ -17,47 +17,47 @@
 <style>
 /* ---------- tokens: light is the complete palette ---------- */
 :root{
-  --paper:#F6F7F6;
+  --paper:#F5F7F9;
   --surface:#FFFFFF;
-  --ink:#141B19;
-  --ink-2:#3A4643;
-  --muted:#5D6B67;
-  --faint:#8A9793;
-  --rule:#DCE3E0;
-  --rule-soft:#E9EEEC;
-  --accent:#0F6E63;
-  --accent-ink:#0A544B;
-  --accent-wash:#E4EFEC;
-  --shadow:0 1px 2px rgba(20,27,25,.05);
+  --ink:#12181F;
+  --ink-2:#364049;
+  --muted:#58646F;
+  --faint:#869199;
+  --rule:#D9E0E6;
+  --rule-soft:#E8EDF1;
+  --accent:#17456B;
+  --accent-ink:#123956;
+  --accent-wash:#E3EBF2;
+  --shadow:0 1px 2px rgba(18,24,31,.06);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0E1413;
-    --surface:#151D1B;
-    --ink:#E7ECE9;
-    --ink-2:#C2CCC8;
-    --muted:#93A29D;
-    --faint:#6F7E79;
-    --rule:#25302D;
-    --rule-soft:#1C2523;
-    --accent:#5CC5B5;
-    --accent-ink:#8AD9CC;
-    --accent-wash:#152826;
+    --paper:#0C1116;
+    --surface:#131A21;
+    --ink:#E5EAEF;
+    --ink-2:#BFCAD3;
+    --muted:#8D9AA5;
+    --faint:#6B7883;
+    --rule:#232D36;
+    --rule-soft:#1A222A;
+    --accent:#6FAAD8;
+    --accent-ink:#96C4E8;
+    --accent-wash:#142430;
     --shadow:0 1px 2px rgba(0,0,0,.3);
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E1413;
-  --surface:#151D1B;
-  --ink:#E7ECE9;
-  --ink-2:#C2CCC8;
-  --muted:#93A29D;
-  --faint:#6F7E79;
-  --rule:#25302D;
-  --rule-soft:#1C2523;
-  --accent:#5CC5B5;
-  --accent-ink:#8AD9CC;
-  --accent-wash:#152826;
+  --paper:#0C1116;
+  --surface:#131A21;
+  --ink:#E5EAEF;
+  --ink-2:#BFCAD3;
+  --muted:#8D9AA5;
+  --faint:#6B7883;
+  --rule:#232D36;
+  --rule-soft:#1A222A;
+  --accent:#6FAAD8;
+  --accent-ink:#96C4E8;
+  --accent-wash:#142430;
   --shadow:0 1px 2px rgba(0,0,0,.3);
 }
 
@@ -142,7 +142,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   display:block;width:100%;height:auto;
   aspect-ratio:1;object-fit:cover;border-radius:50%;
   border:1px solid var(--rule);
-  box-shadow:0 1px 3px rgba(20,27,25,.08), 0 8px 24px rgba(20,27,25,.06);
+  box-shadow:0 1px 3px rgba(18,24,31,.09), 0 8px 24px rgba(18,24,31,.07);
 }
 :root[data-theme="dark"] .portrait img,
 .portrait img{background:var(--surface);}
@@ -882,7 +882,7 @@ footer a{color:var(--muted);}
 
   function accent(){
     var v = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-    return v || '#0F6E63';
+    return v || '#17456B';
   }
 
   function seed(){
