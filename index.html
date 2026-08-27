@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sebastian N. Mendoza - metabolic systems engineering. Genome-scale metabolic models, microbial community modeling, omics integration and bioprocess optimization. Scientist at the Center for Mathematical Modeling, Universidad de Chile.">
+<meta name="author" content="Sebastian N. Mendoza">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sebastian N. Mendoza">
+<meta property="og:description" content="Sebastian N. Mendoza - metabolic systems engineering. Genome-scale metabolic models, microbial community modeling, omics integration and bioprocess optimization. Scientist at the Center for Mathematical Modeling, Universidad de Chile.">
+<meta name="twitter:card" content="summary">
+<title>Sebastián N. Mendoza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+/* ---------- tokens: light is the complete palette ---------- */
+:root{
+  --paper:#F6F7F6;
+  --surface:#FFFFFF;
+  --ink:#141B19;
+  --ink-2:#3A4643;
+  --muted:#5D6B67;
+  --faint:#8A9793;
+  --rule:#DCE3E0;
+  --rule-soft:#E9EEEC;
+  --accent:#0F6E63;
+  --accent-ink:#0A544B;
+  --accent-wash:#E4EFEC;
+  --shadow:0 1px 2px rgba(20,27,25,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1413;
+    --surface:#151D1B;
+    --ink:#E7ECE9;
+    --ink-2:#C2CCC8;
+    --muted:#93A29D;
+    --faint:#6F7E79;
+    --rule:#25302D;
+    --rule-soft:#1C2523;
+    --accent:#5CC5B5;
+    --accent-ink:#8AD9CC;
+    --accent-wash:#152826;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1413;
+  --surface:#151D1B;
+  --ink:#E7ECE9;
+  --ink-2:#C2CCC8;
+  --muted:#93A29D;
+  --faint:#6F7E79;
+  --rule:#25302D;
+  --rule-soft:#1C2523;
+  --accent:#5CC5B5;
+  --accent-ink:#8AD9CC;
+  --accent-wash:#152826;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--rule);border-bottom-color:color-mix(in srgb, var(--accent) 35%, transparent);}
+a:hover{border-bottom-color:var(--accent);}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:var(--paper);
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(1.6) blur(10px);
+  -webkit-backdrop-filter:saturate(1.6) blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-in{
+  max-width:1040px;margin:0 auto;padding:.7rem 1.5rem;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.15rem;
+}
+@media (max-width:880px){
+  .nav-in{
+    flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    padding:.6rem 1.5rem;gap:0 1rem;
+  }
+  .nav-in::-webkit-scrollbar{display:none;}
+  .nav .brand{margin-right:.6rem;flex:0 0 auto;}
+  .nav a:not(.brand){flex:0 0 auto;white-space:nowrap;}
+}
+.nav .brand{
+  font-family:Spectral,Georgia,serif;font-weight:600;font-size:.98rem;
+  color:var(--ink);border:0;margin-right:auto;letter-spacing:.01em;
+}
+.nav a:not(.brand){
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.735rem;letter-spacing:.06em;
+  color:var(--muted);border:0;padding-bottom:1px;
+  border-bottom:1px solid transparent;
+}
+.nav a:not(.brand):hover{color:var(--ink);border-bottom-color:var(--accent);}
+
+/* ---------- shell + the asymmetric rail grid ---------- */
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem 5rem;}
+
+.row{
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr);
+  gap:0 2.25rem;
+}
+.rail{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.735rem;letter-spacing:.05em;
+  color:var(--faint);
+  font-variant-numeric:tabular-nums;
+  padding-top:.34rem;
+}
+@media (max-width:880px){
+  .row{grid-template-columns:1fr;gap:.15rem;}
+  .rail{padding-top:0;}
+}
+
+/* ---------- header ---------- */
+.head{position:relative;overflow:hidden;border-bottom:1px solid var(--rule);}
+#net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.head-in{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:4.2rem 1.5rem 2.6rem;}
+.head-grid{display:grid;grid-template-columns:minmax(0,1fr) 196px;gap:0 2.4rem;align-items:start;}
+.portrait{margin:0;}
+.portrait img{
+  display:block;width:100%;height:auto;
+  aspect-ratio:1;object-fit:cover;border-radius:50%;
+  border:1px solid var(--rule);
+  box-shadow:0 1px 3px rgba(20,27,25,.08), 0 8px 24px rgba(20,27,25,.06);
+}
+:root[data-theme="dark"] .portrait img,
+.portrait img{background:var(--surface);}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .portrait img{box-shadow:0 1px 3px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.35);}
+}
+:root[data-theme="dark"] .portrait img{box-shadow:0 1px 3px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.35);}
+@media (max-width:820px){
+  .head-grid{grid-template-columns:1fr;gap:1.5rem 0;}
+  .portrait{order:-1;max-width:138px;}
+}
+h1{
+  font-family:Spectral,Georgia,serif;
+  font-weight:600;font-size:clamp(2.3rem,6.2vw,3.5rem);
+  line-height:1.05;letter-spacing:-.015em;margin:0 0 .55rem;
+  text-wrap:balance;
+}
+.tagline{
+  font-family:Spectral,Georgia,serif;font-style:italic;
+  font-size:clamp(1.02rem,2.4vw,1.24rem);color:var(--ink-2);
+  margin:0 0 1.15rem;max-width:44ch;text-wrap:balance;
+}
+.affil{margin:0 0 1.5rem;color:var(--muted);font-size:.925rem;max-width:52ch;}
+.affil strong{color:var(--ink-2);font-weight:500;}
+
+.links{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin:0 0 1.7rem;padding:0;list-style:none;}
+.links a{
+  display:inline-block;border:1px solid var(--rule);border-radius:999px;
+  padding:.24rem .74rem;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.715rem;letter-spacing:.045em;color:var(--muted);
+  background:var(--surface);box-shadow:var(--shadow);
+}
+.links a:hover{color:var(--accent-ink);border-color:var(--accent);}
+
+.metrics{
+  display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;list-style:none;
+  border-top:1px solid var(--rule);
+}
+.metrics li{
+  padding:.85rem 1.6rem .85rem 0;margin-right:1.6rem;
+  border-right:1px solid var(--rule-soft);
+}
+.metrics li:last-child{border-right:0;margin-right:0;}
+@media (max-width:700px){
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:0;}
+  .metrics li{border-right:0;margin-right:0;padding:.7rem 1rem .7rem 0;}
+  .metrics b{font-size:1.3rem;}
+}
+.metrics b{
+  display:block;font-family:Spectral,Georgia,serif;font-weight:600;
+  font-size:1.5rem;line-height:1.15;font-variant-numeric:tabular-nums;
+  color:var(--ink);
+}
+.metrics span{
+  display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.665rem;letter-spacing:.075em;text-transform:uppercase;color:var(--faint);
+  margin-top:.2rem;
+}
+
+/* ---------- sections ---------- */
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+section{padding:3.1rem 0 .4rem;border-bottom:1px solid var(--rule-soft);scroll-margin-top:66px;}
+section:last-of-type{border-bottom:0;}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.685rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent);
+}
+h2{
+  font-family:Spectral,Georgia,serif;font-weight:600;
+  font-size:1.62rem;line-height:1.2;letter-spacing:-.01em;
+  margin:0 0 1.05rem;text-wrap:balance;
+}
+@media (max-width:880px){
+  h2{margin-top:.45rem;}
+  .eyebrow{display:block;margin-bottom:.15rem;}
+}
+h3{
+  font-size:.945rem;font-weight:600;margin:2rem 0 .7rem;
+  letter-spacing:.005em;color:var(--ink);
+}
+h3:first-of-type{margin-top:0;}
+p{margin:0 0 1rem;max-width:68ch;color:var(--ink-2);}
+.lead{font-size:1.045rem;color:var(--ink);}
+
+/* ---------- research lines ---------- */
+.lines{list-style:none;margin:0 0 1.6rem;padding:0;display:grid;gap:.1rem;}
+.lines li{
+  display:grid;grid-template-columns:1.55rem minmax(0,1fr);gap:.7rem;
+  padding:.62rem 0;border-top:1px solid var(--rule-soft);
+  max-width:70ch;
+}
+.lines li:last-child{border-bottom:1px solid var(--rule-soft);}
+.lines .n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;
+  color:var(--accent);padding-top:.28rem;
+}
+.lines b{display:block;font-weight:600;font-size:.94rem;color:var(--ink);}
+.lines span.d{display:block;color:var(--muted);font-size:.885rem;line-height:1.55;}
+
+/* ---------- generic entry list ---------- */
+.entries{margin:0;padding:0;list-style:none;}
+.entry{
+  display:grid;grid-template-columns:66px minmax(0,1fr);gap:0 1.15rem;
+  padding:.82rem 0;border-top:1px solid var(--rule-soft);
+}
+.entries .entry:last-child{border-bottom:1px solid var(--rule-soft);}
+.entry .yr{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.715rem;color:var(--faint);font-variant-numeric:tabular-nums;
+  padding-top:.28rem;letter-spacing:.02em;
+}
+.entry .t{display:block;font-weight:600;color:var(--ink);font-size:.945rem;line-height:1.42;margin-bottom:.13rem;max-width:74ch;}
+.entry .m{display:block;color:var(--muted);font-size:.875rem;line-height:1.55;max-width:74ch;}
+.entry .m:empty{display:none;}
+.entry .code{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;
+  color:var(--faint);font-weight:400;letter-spacing:.02em;margin-left:.35rem;
+}
+.entry .m em{font-style:italic;}
+@media (max-width:560px){
+  .entry{grid-template-columns:1fr;gap:.1rem;}
+  .entry .yr{padding-top:0;}
+}
+
+/* ---------- publications ---------- */
+.pub{
+  display:grid;grid-template-columns:66px minmax(0,1fr);gap:0 1.15rem;
+  padding:.95rem 0;border-top:1px solid var(--rule-soft);
+}
+.pubs .pub:last-child{border-bottom:1px solid var(--rule-soft);}
+.pub .yr{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.715rem;color:var(--faint);font-variant-numeric:tabular-nums;padding-top:.3rem;
+}
+.cite{margin:0 0 .3rem;font-size:.925rem;line-height:1.58;color:var(--ink-2);max-width:74ch;}
+.cite .me{font-weight:600;color:var(--ink);}
+.cite .ti{color:var(--ink);}
+.cite .jr{font-style:italic;}
+.doi{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;
+  letter-spacing:.02em;color:var(--faint);border:0;
+  word-break:break-all;
+}
+.doi:hover{color:var(--accent-ink);}
+@media (max-width:560px){
+  .pub{grid-template-columns:1fr;gap:.15rem;}
+  .pub .yr{padding-top:0;}
+}
+
+/* ---------- selected work ---------- */
+.selected{display:grid;gap:.75rem;margin:0 0 2.2rem;padding:0;list-style:none;}
+.sel{
+  background:var(--surface);border:1px solid var(--rule);
+  border-left:2px solid var(--accent);
+  border-radius:3px;padding:.9rem 1.1rem;box-shadow:var(--shadow);
+}
+.sel .st{font-weight:600;font-size:.93rem;color:var(--ink);display:block;margin-bottom:.18rem;line-height:1.4;}
+.sel .sm{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.665rem;
+  letter-spacing:.055em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:.42rem;
+}
+.sel p{margin:0;font-size:.885rem;color:var(--muted);line-height:1.55;max-width:72ch;}
+
+/* ---------- funding ---------- */
+.grants{display:grid;gap:.75rem;margin:0 0 1rem;padding:0;list-style:none;}
+.grant{
+  border:1px solid var(--rule);border-radius:3px;padding:.85rem 1.05rem;
+  background:var(--surface);box-shadow:var(--shadow);
+}
+.grant .amt{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;
+  letter-spacing:.05em;color:var(--accent-ink);font-variant-numeric:tabular-nums;
+}
+.grant .gt{display:block;font-weight:600;font-size:.925rem;margin:.16rem 0 .18rem;color:var(--ink);line-height:1.42;}
+.grant .gm{font-size:.855rem;color:var(--muted);}
+
+/* ---------- pills ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0 0;padding:0;list-style:none;}
+.tags li{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.665rem;
+  letter-spacing:.05em;color:var(--muted);
+  border:1px solid var(--rule);border-radius:999px;padding:.16rem .6rem;
+  background:var(--accent-wash);
+}
+
+/* ---------- note ---------- */
+.note{
+  border:1px dashed var(--rule);border-radius:3px;
+  padding:.72rem .95rem;margin:1.3rem 0 0;
+  font-size:.845rem;color:var(--muted);max-width:70ch;
+}
+.note b{color:var(--ink-2);font-weight:600;}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--rule);margin-top:3rem;padding:1.8rem 0 0;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;letter-spacing:.04em;color:var(--faint);
+}
+footer a{color:var(--muted);}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;}
+}
+
+@media print{
+  .nav,#net{display:none;}
+  body{background:#fff;color:#000;font-size:10.5pt;}
+  .head-in{padding-top:0;}
+  section{page-break-inside:auto;border:0;}
+  .pub,.entry{page-break-inside:avoid;}
+  a{color:#000;border:0;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">Sebastián N. Mendoza</a>
+    <a href="#about">about</a>
+    <a href="#research">research</a>
+    <a href="#publications">publications</a>
+    <a href="#teaching">teaching</a>
+    <a href="#supervision">supervision</a>
+    <a href="#experience">experience</a>
+    <a href="#talks">talks</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<header class="head" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="head-in">
+   <div class="head-grid">
+    <div class="head-text">
+    <h1>Sebastián N. Mendoza</h1>
+    <p class="tagline">Metabolic systems engineering — building mathematical models of metabolism, from single cells to microbial communities.</p>
+    <p class="affil">Scientist, <strong>Center for Mathematical Modeling</strong>, Universidad de Chile · Young Researcher, <strong>Millennium Institute for Genome Regulation</strong> · Ph.D. in Systems Biology, Vrije Universiteit Amsterdam</p>
+
+    <ul class="links">
+      <li><a href="mailto:smendoza@cmm.uchile.cl">email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=3rDvuGcAAAAJ&amp;hl=en">google scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-2192-5569">orcid</a></li>
+      <li><a href="https://www.webofscience.com/wos/author/record/76029988">web of science</a></li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=55517097800">scopus</a></li>
+      <li><a href="https://www.researchgate.net/profile/Sebastian-Mendoza-4">researchgate</a></li>
+      <li><a href="https://www.linkedin.com/in/snmendoz/">linkedin</a></li>
+      <li><a href="https://investigadores.anid.cl/en/people/23650-Sebastian_Mendoza">anid</a></li>
+    </ul>
+    </div>
+
+    <figure class="portrait">
+      <img src="data:image/webp;base64,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" alt="Portrait of Sebastián N. Mendoza" width="440" height="440">
+    </figure>
+   </div>
+
+    <ul class="metrics">
+      <li><b>19</b><span>journal articles</span></li>
+      <li><b>3</b><span>book chapters</span></li>
+      <li><b>1</b><span>patent</span></li>
+      <li><b>13</b><span>h-index · wos</span></li>
+      <li><b>1,483</b><span>citations · wos</span></li>
+      <li><b>&gt;400k</b><span>usd awarded</span></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">01 / about</span></div>
+    <div>
+      <h2>About</h2>
+      <p class="lead">I work at the intersection of metabolic engineering and systems biology — a field usually called <em>metabolic systems engineering</em>. My research builds and applies mathematical models of cellular metabolism to understand how organisms allocate resources, and to design better ways of producing high-value compounds in cell factories.</p>
+
+      <p>Advances in sequencing and in the mass quantification of transcripts, proteins and metabolites have made omics data abundant and cheap. Integrating that data into metabolic models produces markedly more accurate predictions of cellular behaviour — and that integration is where most of my work sits: metabolic network reconstruction, omics integration, modeling of microbial communities, artificial intelligence for model improvement, and advanced optimization of metabolic networks.</p>
+
+      <p>I did my Ph.D. in systems biology at the Vrije Universiteit Amsterdam, in Bas Teusink's Systems Biology Lab, on a Becas Chile fellowship. Before and since, I have worked on both sides of the academic–industrial boundary: as Chief Operating Officer at STICTA Biologicals leading the bioprocess area, as an advisor to Chr. Hansen on yogurt fermentation, and as a project engineer building models for wastewater treatment plants. That range is deliberate — the methods travel well across microbes, algae, fungi and mammalian cells.</p>
+
+      <p>I am currently a scientist at the Center for Mathematical Modeling at Universidad de Chile, and available to supervise undergraduate and graduate thesis students.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">02 / research</span></div>
+    <div>
+      <h2>Research</h2>
+
+      <h3>Research lines</h3>
+      <ul class="lines">
+        <li><span class="n">i</span><span><b>Metabolic network reconstruction</b><span class="d">Building genome-scale metabolic models from genome sequences, and assessing the tools that produce them.</span></span></li>
+        <li><span class="n">ii</span><span><b>Microbial community modeling</b><span class="d">Determining interspecies interactions, nutritional requirements and minimal synthetic consortia.</span></span></li>
+        <li><span class="n">iii</span><span><b>Omics data integration</b><span class="d">Constraining models with transcriptomic, proteomic and metabolomic measurements for context-specific predictions.</span></span></li>
+        <li><span class="n">iv</span><span><b>Artificial intelligence for metabolic models</b><span class="d">Predicting enzymatic parameters and coupling learned models with classical stoichiometric and kinetic methods.</span></span></li>
+        <li><span class="n">v</span><span><b>Advanced optimization for strain and bioprocess design</b><span class="d">Multi-level and mixed-integer linear programming applied to cell factories and fermentation processes.</span></span></li>
+      </ul>
+
+      <h3>Current project — microbial communities along the coast of Chile</h3>
+      <p>Thanks to the CEODOS <em>Mission Microbiome</em> expedition, more than 150 metagenomes and metatranscriptomes are available along the Chilean coast, from Iquique to Punta Arenas. From that genetic content, this project reconstructs metabolic networks to determine the metabolic potential of the microbial community in each sample, and so identify the characteristics that define each maritime zone of the country.</p>
+      <p>The work brings together metabolic reconstruction, integration of metatranscriptomic data, community modeling for interspecies interactions, artificial intelligence to predict enzymatic parameters, and advanced optimization to determine minimal synthetic marine communities. The results are intended as input for public policy aimed at protecting key ecosystem zones along the coast, as well as for improving economic productivity.</p>
+      <ul class="tags">
+        <li>genome-scale models</li><li>metagenomics</li><li>marine microbiome</li><li>constraint-based optimization</li><li>machine learning</li>
+      </ul>
+
+      <h3>Funding awarded</h3>
+      <ul class="grants">
+        <li class="grant">
+          <span class="amt">USD 350,000 · 04/2024 · Good Food Institute</span>
+          <span class="gt">Development of a metabolic model for porcine cells to enhance cell doubling rates, yields and cell densities in cultivated meat production</span>
+          <span class="gm">Role: Director at the Center for Mathematical Modeling.</span>
+        </li>
+        <li class="grant">
+          <span class="amt">USD 20,000 · 05/2025 · Nippon Telegraph and Telephone Corporation</span>
+          <span class="gt">Increasing TAG production yields in <em>Cyanidioschyzon merolae</em> through model-based rational design</span>
+          <span class="gm">Role: Director at the Center for Mathematical Modeling.</span>
+        </li>
+        <li class="grant">
+          <span class="amt">CLP 127,000,000 · 03/2023 · ANID (SUC230013)</span>
+          <span class="gt">Smart Serum: cost-effective culture medium to grow cultivated meat</span>
+          <span class="gm">Role: Collaborator.</span>
+        </li>
+      </ul>
+
+      <h3>Collaborations</h3>
+      <p><strong>International.</strong> Systems Biology Laboratory at the <a href="https://teusinkbruggemanlab.nl/">Vrije Universiteit Amsterdam</a> (models integrating proteomic data); <a href="https://www.sysbio.se/labs/kerkhoven-lab/">Eduard Kerkhoven's SysBio lab</a> at Chalmers (continued development of the consensus <em>S. cerevisiae</em> model); <a href="https://team.inria.fr/dyliss/anne-siegel/">Anne Siegel</a> at Rennes University and <a href="https://cfrioux.github.io/">Clémence Frioux</a> at Bordeaux (culture media inference); and Ronan Fleming at Galway University.</p>
+      <p><strong>National.</strong> Mauricio Latorre and Alex Di Genova, Bioengineering laboratory at Universidad de O'Higgins; Eduardo Agosin, CTO of STICTA Biologicals; Alejandro Maass, Department of Mathematical Engineering, Universidad de Chile.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">03 / publications</span></div>
+    <div>
+      <h2>Publications</h2>
+      <p>19 peer-reviewed research articles and 3 book chapters. Full records on <a href="https://scholar.google.com/citations?user=3rDvuGcAAAAJ&amp;hl=en">Google Scholar</a> and <a href="https://orcid.org/0000-0002-2192-5569">ORCID</a>.</p>
+
+      <h3>Selected work</h3>
+      <ul class="selected">
+        <li class="sel">
+          <span class="st">A systematic assessment of current genome-scale metabolic reconstruction tools</span>
+          <span class="sm">Genome Biology · 2019 · first author</span>
+          <p>A first-authored comparison of the tools available for reconstructing genome-scale metabolic models, with practical guidelines for users. Over 100 citations.</p>
+        </li>
+        <li class="sel">
+          <span class="st">Creation and analysis of biochemical constraint-based models using the COBRA Toolbox v.3.0</span>
+          <span class="sm">Nature Protocols · 2019 · over 800 citations</span>
+          <p>The current standard protocol for constraint-based analysis and reconstruction of metabolic networks. My contribution was software development for metabolic engineering and strain design.</p>
+        </li>
+        <li class="sel">
+          <span class="st">Yeast9: a consensus genome-scale metabolic model for <em>S. cerevisiae</em> curated by the community</span>
+          <span class="sm">Molecular Systems Biology · 2024</span>
+          <p>The current version of the consensus yeast metabolic reconstruction, already cited more than 60 times. My contribution was network curation, particularly of annotations.</p>
+        </li>
+        <li class="sel">
+          <span class="st">A comprehensive genome-scale metabolic model for porcine cells for the cultivated meat industry</span>
+          <span class="sm">Future Foods · 2026 · corresponding author</span>
+          <p>A model for a mammalian cell type, with applications to process optimization and design. I conceived the investigation and led funding acquisition, formal analysis, writing and supervision.</p>
+        </li>
+        <li class="sel">
+          <span class="st">Reconstruction of the microalga <em>Nannochloropsis salina</em> genome-scale metabolic model with applications to lipid production</span>
+          <span class="sm">BMC Systems Biology · 2017</span>
+          <p>Shows that metabolic models can propose metabolic engineering strategies that improve titers and yields of high-value compounds. My contribution was building the model.</p>
+        </li>
+      </ul>
+
+      <h3>Journal articles</h3>
+      <ol class="pubs" style="list-style:none;margin:0;padding:0;">
+        <li class="pub"><span class="yr">2026</span><div>
+          <p class="cite">Núñez, D., Krauss, C., Gomes Fernandes, M., Vlaar, J., Cochrane, A., Pérez, J. R., Maass, A., Agosin, E., &amp; <span class="me">Mendoza, S. N.</span> <span class="ti">A comprehensive genome-scale metabolic model for porcine cells as a tool for process optimization and design in the cultivated meat industry.</span> <span class="jr">Future Foods</span>, 14, 101132.</p>
+          <a class="doi" href="https://doi.org/10.1016/j.fufo.2026.101132">doi:10.1016/j.fufo.2026.101132</a></div></li>
+
+        <li class="pub"><span class="yr">2026</span><div>
+          <p class="cite">Jiménez, N. E., Espinoza, M., Mejías, S., <span class="me">Mendoza, S. N.</span>, Segovia, I., Salgado, J. C., Conca, C., &amp; Gerdtzen, Z. P. <span class="ti">Selecting methods for draft GEM generation in multicellular eukaryotes: a comparative analysis.</span> <span class="jr">BMC Bioinformatics</span>, 27(1), 153.</p>
+          <a class="doi" href="https://doi.org/10.1186/s12859-026-06455-7">doi:10.1186/s12859-026-06455-7</a></div></li>
+
+        <li class="pub"><span class="yr">2025</span><div>
+          <p class="cite">Aliaga-Tobar, V., Torres, J., <span class="me">Mendoza, S. N.</span>, Gálvez, G., Ortega, J., &amp; Gómez, S. <span class="ti">Reduced glutathione levels in <em>Enterococcus faecalis</em> trigger metabolic and transcriptional compensatory adjustments during iron stress.</span> <span class="jr">mSystems</span>, 11(1), e01240-25.</p>
+          <a class="doi" href="https://doi.org/10.1128/msystems.01240-25">doi:10.1128/msystems.01240-25</a></div></li>
+
+        <li class="pub"><span class="yr">2024</span><div>
+          <p class="cite">Zhang, C., Sánchez, B. J., Li, F., Eiden, C. W. Q., Scott, W. T., Liebal, U. W., Blank, L. M., Mengers, H. G., Anton, M., Rangel, A. T., <span class="me">Mendoza, S. N.</span>, Zhang, L., Nielsen, J., Lu, H., &amp; Kerkhoven, E. J. <span class="ti">Yeast9: a consensus genome-scale metabolic model for <em>S. cerevisiae</em> curated by the community.</span> <span class="jr">Molecular Systems Biology</span>, 20(10).</p>
+          <a class="doi" href="https://doi.org/10.1038/s44320-024-00060-7">doi:10.1038/s44320-024-00060-7</a></div></li>
+
+        <li class="pub"><span class="yr">2024</span><div>
+          <p class="cite">Deantas-Jahn, C., <span class="me">Mendoza, S. N.</span>, Licona-Cassani, C., Orellana, C., &amp; Saa, P. A. <span class="ti">Metabolic modeling of <em>Halomonas campaniensis</em> improves polyhydroxybutyrate production under nitrogen limitation.</span> <span class="jr">Applied Microbiology and Biotechnology</span>, 108(1).</p>
+          <a class="doi" href="https://doi.org/10.1007/s00253-024-13111-8">doi:10.1007/s00253-024-13111-8</a></div></li>
+
+        <li class="pub"><span class="yr">2023</span><div>
+          <p class="cite">Bendig, T., Ulmer, A., Luzia, L., Müller, S., Sahle, S., Bergmann, F. T., Lösch, M., Erdemann, F., Zeidan, A. A., <span class="me">Mendoza, S. N.</span>, Teusink, B., Takors, R., Kummer, U., &amp; Figueiredo, A. S. <span class="ti">The pH-dependent lactose metabolism of <em>Lactobacillus delbrueckii</em> subsp. <em>bulgaricus</em>: an integrative view through a mechanistic computational model.</span> <span class="jr">Journal of Biotechnology</span>, 374, 90–100.</p>
+          <a class="doi" href="https://doi.org/10.1016/j.jbiotec.2023.08.001">doi:10.1016/j.jbiotec.2023.08.001</a></div></li>
+
+        <li class="pub"><span class="yr">2023</span><div>
+          <p class="cite">Battjes, J., Melkonian, C., <span class="me">Mendoza, S. N.</span>, Haver, A., Al-Nakeeb, K., Koza, A., Schrubbers, L., Wagner, M., Zeidan, A. A., Molenaar, D., &amp; Teusink, B. <span class="ti">Ethanol-lactate transition of <em>Lachancea thermotolerans</em> is linked to nitrogen metabolism.</span> <span class="jr">Food Microbiology</span>, 110.</p>
+          <a class="doi" href="https://doi.org/10.1016/j.fm.2022.104167">doi:10.1016/j.fm.2022.104167</a></div></li>
+
+        <li class="pub"><span class="yr">2023</span><div>
+          <p class="cite">Contreras, A., Díaz, G., <span class="me">Mendoza, S. N.</span>, Canto, M., &amp; Agosin, E. <span class="ti">Metabolic behavior for a mutant <em>Oenococcus oeni</em> strain with high resistance to ethanol to survive under oenological multi-stress conditions.</span> <span class="jr">Frontiers in Microbiology</span>, 14, 1100501.</p>
+          <a class="doi" href="https://doi.org/10.3389/fmicb.2023.1100501">doi:10.3389/fmicb.2023.1100501</a></div></li>
+
+        <li class="pub"><span class="yr">2022</span><div>
+          <p class="cite">Grigaitis, P., Grundel, D. A. J., van Pelt-KleinJan, E., Isaku, M., Xie, G., <span class="me">Mendoza, S.</span>, Teusink, B., &amp; van Heerden, J. H. <span class="ti">A computational toolbox to investigate the metabolic potential and resource allocation in fission yeast.</span> <span class="jr">mSystems</span>, 7(4).</p>
+          <a class="doi" href="https://doi.org/10.1128/msystems.00423-22">doi:10.1128/msystems.00423-22</a></div></li>
+
+        <li class="pub"><span class="yr">2021</span><div>
+          <p class="cite">Henriques, D., Minebois, R., <span class="me">Mendoza, S. N.</span>, Macías, L. G., Pérez-Torrado, R., Barrio, E., Teusink, B., Querol, A., &amp; Balsa-Canto, E. <span class="ti">A multiphase multiobjective dynamic genome-scale model shows different redox balancing among yeast species of the <em>Saccharomyces</em> genus in fermentation.</span> <span class="jr">mSystems</span>, 6(4).</p>
+          <a class="doi" href="https://doi.org/10.1128/msystems.00260-21">doi:10.1128/msystems.00260-21</a></div></li>
+
+        <li class="pub"><span class="yr">2020</span><div>
+          <p class="cite">Mandakovic, D., Cintolesi, Á., Maldonado, J., <span class="me">Mendoza, S. N.</span>, Aïte, M., Gaete, A., Saitua, F., Allende, M., Cambiazo, V., Siegel, A., &amp; Maass, A. <span class="ti">Genome-scale metabolic models of <em>Microbacterium</em> species isolated from a high altitude desert environment.</span> <span class="jr">Scientific Reports</span>, 10(5560), 1–13.</p>
+          <a class="doi" href="https://doi.org/10.1038/s41598-020-62130-8">doi:10.1038/s41598-020-62130-8</a></div></li>
+
+        <li class="pub"><span class="yr">2019</span><div>
+          <p class="cite"><span class="me">Mendoza, S. N.</span>, Olivier, B. G., Molenaar, D., &amp; Teusink, B. <span class="ti">A systematic assessment of current genome-scale metabolic reconstruction tools.</span> <span class="jr">Genome Biology</span>, 20(1), 1–20.</p>
+          <a class="doi" href="https://doi.org/10.1186/s13059-019-1769-1">doi:10.1186/s13059-019-1769-1</a></div></li>
+
+        <li class="pub"><span class="yr">2019</span><div>
+          <p class="cite">Heirendt, L., Arreckx, S., Pfau, T., <span class="me">Mendoza, S. N.</span>, Richelle, A., Heinken, A., Haraldsdóttir, H. S., Keating, S. M., … Thiele, I., &amp; Fleming, R. M. T. <span class="ti">Creation and analysis of biochemical constraint-based models using the COBRA Toolbox v.3.0.</span> <span class="jr">Nature Protocols</span>, 14(3), 639–702.</p>
+          <a class="doi" href="https://doi.org/10.1038/s41596-018-0098-2">doi:10.1038/s41596-018-0098-2</a></div></li>
+
+        <li class="pub"><span class="yr">2018</span><div>
+          <p class="cite">Aite, M., Chevallier, M., Frioux, C., Trottier, C., Got, J., Cortés, M. P., <span class="me">Mendoza, S. N.</span>, Carrier, G., Dameron, O., Guillaudeux, N., Latorre, M., Loira, N., Markov, G. V., Maass, A., &amp; Siegel, A. <span class="ti">Traceability, reproducibility and wiki-exploration for "à-la-carte" reconstructions of genome-scale metabolic models.</span> <span class="jr">PLoS Computational Biology</span>, 14(5), 1–25.</p>
+          <a class="doi" href="https://doi.org/10.1371/journal.pcbi.1006146">doi:10.1371/journal.pcbi.1006146</a></div></li>
+
+        <li class="pub"><span class="yr">2018</span><div>
+          <p class="cite">Contreras, A., Ribbeck, M., Gutiérrez, G. D., Cañón, P. M., <span class="me">Mendoza, S. N.</span>, &amp; Agosin, E. <span class="ti">Mapping the physiological response of <em>Oenococcus oeni</em> to ethanol stress using an extended genome-scale metabolic model.</span> <span class="jr">Frontiers in Microbiology</span>, 9, 291.</p>
+          <a class="doi" href="https://doi.org/10.3389/fmicb.2018.00291">doi:10.3389/fmicb.2018.00291</a></div></li>
+
+        <li class="pub"><span class="yr">2017</span><div>
+          <p class="cite">Cortés, M. P., <span class="me">Mendoza, S. N.</span>, Travisany, D., Gaete, A., Siegel, A., Cambiazo, V., &amp; Maass, A. <span class="ti">Analysis of <em>Piscirickettsia salmonis</em> metabolism using genome-scale reconstruction, modeling, and testing.</span> <span class="jr">Frontiers in Microbiology</span>, 8, 2462.</p>
+          <a class="doi" href="https://doi.org/10.3389/fmicb.2017.02462">doi:10.3389/fmicb.2017.02462</a></div></li>
+
+        <li class="pub"><span class="yr">2017</span><div>
+          <p class="cite">Loira, N., <span class="me">Mendoza, S.</span>, Cortés, M. P., Rojas, N., Travisany, D., Di Genova, A., Gajardo, N., Ehrenfeld, N., &amp; Maass, A. <span class="ti">Reconstruction of the microalga <em>Nannochloropsis salina</em> genome-scale metabolic model with applications to lipid production.</span> <span class="jr">BMC Systems Biology</span>, 11(66).</p>
+          <a class="doi" href="https://doi.org/10.1186/s12918-017-0441-1">doi:10.1186/s12918-017-0441-1</a></div></li>
+
+        <li class="pub"><span class="yr">2017</span><div>
+          <p class="cite"><span class="me">Mendoza, S. N.</span>, Cañón, P. M., Contreras, Á., Ribbeck, M., &amp; Agosin, E. <span class="ti">Genome-scale reconstruction of the metabolic network in <em>Oenococcus oeni</em> to assess wine malolactic fermentation.</span> <span class="jr">Frontiers in Microbiology</span>, 8, 534.</p>
+          <a class="doi" href="https://doi.org/10.3389/fmicb.2017.00534">doi:10.3389/fmicb.2017.00534</a></div></li>
+
+        <li class="pub"><span class="yr">2012</span><div>
+          <p class="cite">Aceituno, F., Orellana, M., Torres, J., <span class="me">Mendoza, S.</span>, Slater, A., Melo, F., &amp; Agosin, E. <span class="ti">Oxygen response of the wine yeast <em>Saccharomyces cerevisiae</em> EC1118 grown under carbon-sufficient, nitrogen-limited enological conditions.</span> <span class="jr">Applied and Environmental Microbiology</span>, 78(23), 8340–8352.</p>
+          <a class="doi" href="https://doi.org/10.1128/AEM.02305-12">doi:10.1128/AEM.02305-12</a></div></li>
+      </ol>
+
+      <h3>Book chapters</h3>
+      <ol class="pubs" style="list-style:none;margin:0;padding:0;">
+        <li class="pub"><span class="yr">2025</span><div>
+          <p class="cite">Ghassemi Nedjad, C., <span class="me">Mendoza, S. N.</span>, Frioux, C., &amp; Paulevé, L. <span class="ti">Seed inference in interacting microbial communities using combinatorial optimization.</span> In Fages, F. &amp; Pérès, S. (eds), <span class="jr">Computational Methods in Systems Biology (CMSB 2025)</span>, Lecture Notes in Computer Science, vol. 15959. Springer, Cham.</p>
+          <a class="doi" href="https://doi.org/10.1007/978-3-032-01436-8_20">doi:10.1007/978-3-032-01436-8_20</a></div></li>
+
+        <li class="pub"><span class="yr">2022</span><div>
+          <p class="cite"><span class="me">Mendoza, S. N.</span>, Saa, P., Teusink, B., &amp; Agosin, E. <span class="ti">Metabolic modeling of wine fermentation at genome scale.</span> In <span class="jr">Computational Systems Biology in Medicine and Biotechnology</span>, Methods in Molecular Biology.</p>
+          <a class="doi" href="https://doi.org/10.1007/978-1-0716-1831-8_16">doi:10.1007/978-1-0716-1831-8_16</a></div></li>
+
+        <li class="pub"><span class="yr">2021</span><div>
+          <p class="cite"><span class="me">Mendoza, S. N.</span>, Calhoun, S., Teusink, B., &amp; Aguilar-Pontes, M. V. <span class="ti">Metabolic modeling of fungi.</span> In <span class="jr">Reference Module in Life Sciences</span>. Elsevier.</p>
+          <a class="doi" href="https://doi.org/10.1016/B978-0-12-809633-8.21068-6">doi:10.1016/B978-0-12-809633-8.21068-6</a></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHING ============ -->
+<section id="teaching">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">04 / teaching</span></div>
+    <div>
+      <h2>Teaching</h2>
+      <p>In the second semester of 2025 I was coordinator and lecturer for <strong>Modeling and Analysis of Biological Networks</strong> at Universidad de Chile, where students evaluated the course at 7.0 out of 7.0. During my doctoral training I taught biochemistry, thermodynamics and modeling of biological systems at the Vrije Universiteit Amsterdam. My teaching is strengthened by industry experience: as COO at STICTA Biologicals I led the bioprocess area for bioreactor-based production of recombinant proteins and biostimulants using cell factories.</p>
+      <h3>Courses taught</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2025</span><div>
+          <span class="t">Modelamiento y Análisis de Redes Biológicas <span class="code">MA5405-1</span></span>
+          <span class="m">Professor and coordinator · Universidad de Chile · student evaluation 7.0 / 7.0</span></div></li>
+        <li class="entry"><span class="yr">2020</span><div>
+          <span class="t">Introduction to Systems Biology <span class="code">X_428565</span></span>
+          <span class="m">Professor · Vrije Universiteit Amsterdam</span></div></li>
+        <li class="entry"><span class="yr">2020</span><div>
+          <span class="t">Basic Models of Biological Networks <span class="code">X_418154</span></span>
+          <span class="m">Professor · Vrije Universiteit Amsterdam</span></div></li>
+        <li class="entry"><span class="yr">2020</span><div>
+          <span class="t">Medical Biochemistry <span class="code">AB_1198</span></span>
+          <span class="m">Teaching assistant · Vrije Universiteit Amsterdam</span></div></li>
+        <li class="entry"><span class="yr">2018–21</span><div>
+          <span class="t">Statistics with R <span class="code">X_418156</span></span>
+          <span class="m">Teaching assistant · Vrije Universiteit Amsterdam</span></div></li>
+        <li class="entry"><span class="yr">2017</span><div>
+          <span class="t">Biotecnología Microbiana <span class="code">IIQ3683</span></span>
+          <span class="m">Teaching assistant · Pontificia Universidad Católica de Chile</span></div></li>
+        <li class="entry"><span class="yr">2016</span><div>
+          <span class="t">Laboratorio de Modelamiento Matemático <span class="code">MA5500</span></span>
+          <span class="m">Teaching assistant · Universidad de Chile</span></div></li>
+        <li class="entry"><span class="yr">2015</span><div>
+          <span class="t">Fundamentos de Biotecnología <span class="code">IIQ2663</span></span>
+          <span class="m">Teaching assistant · Pontificia Universidad Católica de Chile</span></div></li>
+        <li class="entry"><span class="yr">2013</span><div>
+          <span class="t">Biotecnología de la Vid y el Vino <span class="code">IIQ3692</span></span>
+          <span class="m">Teaching assistant · Pontificia Universidad Católica de Chile</span></div></li>
+        <li class="entry"><span class="yr">2012–14</span><div>
+          <span class="t">Biotecnología Microbiana <span class="code">IIQ3683</span></span>
+          <span class="m">Teaching assistant · Pontificia Universidad Católica de Chile</span></div></li>
+      </ul>
+
+      <h3>Available courses</h3>
+      <ul class="lines">
+        <li><span class="n">1</span><span><b>Fundamentals of Artificial Intelligence and its Applications in Biology</b><span class="d">Large language models, convolutional networks and transformers, with hands-on model building: protein structure prediction, AI coupled to bioprocess optimization, and AI coupled to optimization over metabolic networks.</span></span></li>
+        <li><span class="n">2</span><span><b>Advanced Optimization Methods in Cell Factories</b><span class="d">Optimization methods for increasing production of high-value compounds, with practical experience in multi-level and mixed-integer linear programming. Based on <em>Optimization Methods in Metabolic Networks</em> (Maranas &amp; Zomorrodi).</span></span></li>
+        <li><span class="n">3</span><span><b>Fundamentals of Systems Biology</b><span class="d">Based on Uri Alon's <em>An Introduction to Systems Biology</em>, Bernhard Palsson's <em>Constraint-Based Modeling and Optimization</em>, and <em>Economic Principles in Cell Biology</em>.</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPERVISION ============ -->
+<section id="supervision">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">05 / supervision</span></div>
+    <div>
+      <h2>Supervision &amp; thesis examination</h2>
+      <p>I have supervised students across disciplines and levels — mathematical engineering, biotechnology engineering, electrical engineering — and served as external examiner for doctoral and master's theses in Chile and Spain.</p>
+
+      <h3>Graduate theses supervised</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2023–25</span><div>
+          <span class="t">Jorge Torres — M.Sc. in Biotechnology, Universidad de O'Higgins</span>
+          <span class="m">External supervisor. <em>Optimization of biomass production from extremophilic bacteria isolated from mine tailings using bioreactors.</em> Advisor: Mauricio Latorre. <a href="https://www.uoh.cl/magister-en-biotecnologia-celebra-la-graduacion-de-tres-nuevos-estudiantes/">Graduation note</a></span></div></li>
+        <li class="entry"><span class="yr">2021–23</span><div>
+          <span class="t">Carolina Deantas — M.Sc. in Engineering Sciences, Pontificia Universidad Católica de Chile</span>
+          <span class="m">External supervisor. <em>Optimization of <em>Halomonas</em> spp. as a non-conventional platform for the low-cost production of PHB based on genome-scale model analysis.</em> Advisor: Pedro Saa. <a href="https://www.uc.cl/noticias/investigadores-chilenos-moderlaron-una-bacteria-para-producir-bioplasticos/">Press coverage</a></span></div></li>
+      </ul>
+
+      <h3>External thesis examination</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2026</span><div>
+          <span class="t">Diego Troitiño-Jordedo — Ph.D. thesis, Universidade de Santiago de Compostela</span>
+          <span class="m">External evaluator. <em>Modelling the dynamics of cellular metabolism for the design of new fermentation processes.</em> Doctoral Programme in Mathematical Modelling and Numerical Simulation in Engineering and Applied Sciences. Advisors: Eva Balsa-Canto, David Henriques.</span></div></li>
+        <li class="entry"><span class="yr">2026</span><div>
+          <span class="t">Alejandro Sepúlveda — M.Sc. thesis, Pontificia Universidad Católica de Chile</span>
+          <span class="m">External evaluator. <em>A framework for building detailed kinetic models of metabolism: β-ionone production as a case study.</em> M.Sc. in Engineering Sciences. Advisor: Pedro Saa.</span></div></li>
+      </ul>
+
+      <h3>Undergraduate research internships</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2025–26</span><div>
+          <span class="t">Matías Olate — Mathematical Engineering, Universidad de Chile</span>
+          <span class="m">Exploring the metabolism of the kings of the ocean with mathematical models: diatoms.</span></div></li>
+        <li class="entry"><span class="yr">2025–26</span><div>
+          <span class="t">Ángel Carvajal — Mathematical Engineering, Universidad de Chile</span>
+          <span class="m">Implementation of a MILP problem to enumerate minimum-cardinality media in microbial communities.</span></div></li>
+        <li class="entry"><span class="yr">2025–26</span><div>
+          <span class="t">Paulina Mujica — Biotechnology Engineering, Universidad de Chile</span>
+          <span class="m">Sensitivity analysis in a cultivated meat model.</span></div></li>
+        <li class="entry"><span class="yr">2024–25</span><div>
+          <span class="t">Nicolás Ebner — Biotechnology Engineering, Universidad de Chile</span>
+          <span class="m">Generation of a kinetic model to optimize triglyceride production in microalgae.</span></div></li>
+        <li class="entry"><span class="yr">2024–25</span><div>
+          <span class="t">Thomas Aguilera — Electrical Engineering, Universidad de Chile</span>
+          <span class="m">Use and comparison of artificial intelligence algorithms for predicting kinetic parameters of animal cells used in cultivated meat production.</span></div></li>
+        <li class="entry"><span class="yr">2023–24</span><div>
+          <span class="t">Agustín Avilés — Biotechnology Engineering, Universidad de Chile</span>
+          <span class="m">Development of a kinetic model of the cytosol, mitochondrion and peroxisome in <em>Saccharomyces cerevisiae</em>.</span></div></li>
+        <li class="entry"><span class="yr">2023</span><div>
+          <span class="t">Josefa Alista — Biotechnology Engineering, Universidad de Chile</span>
+          <span class="m">Optimization of cell densities in <em>Yarrowia lipolytica</em> cultures using bioreactors.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">06 / experience</span></div>
+    <div>
+      <h2>Experience &amp; education</h2>
+
+      <h3>Positions</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2023–</span><div>
+          <span class="t">Scientist, Center for Mathematical Modeling, Universidad de Chile</span>
+          <span class="m">Also Young Researcher at the Millennium Institute for Genome Regulation.</span></div></li>
+        <li class="entry"><span class="yr">2021–23</span><div>
+          <span class="t">Chief Operating Officer, STICTA Biologicals</span>
+          <span class="m">Led the bioprocess area for bioreactor production of recombinant proteins, biostimulants and nutraceuticals using cell factories.</span></div></li>
+        <li class="entry"><span class="yr">2018–24</span><div>
+          <span class="t">Ph.D. candidate, Vrije Universiteit Amsterdam</span>
+          <span class="m">Systems Biology Lab · ERA-CoBioTech European joint project · Becas Chile fellowship.</span></div></li>
+        <li class="entry"><span class="yr">2016–18</span><div>
+          <span class="t">Project Engineer, Center for Mathematical Modeling, Universidad de Chile</span>
+          <span class="m"></span></div></li>
+        <li class="entry"><span class="yr">2014–16</span><div>
+          <span class="t">Project Engineer, Pontificia Universidad Católica de Chile</span>
+          <span class="m">FONDEF D11I1139.</span></div></li>
+      </ul>
+
+      <h3>Education</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2024</span><div>
+          <span class="t">Ph.D., Systems Biology — Vrije Universiteit Amsterdam</span>
+          <span class="m">Amsterdam, The Netherlands.</span></div></li>
+        <li class="entry"><span class="yr">2014</span><div>
+          <span class="t">M.Sc. in Engineering Sciences, Systems Biology — Pontificia Universidad Católica de Chile</span>
+          <span class="m"></span></div></li>
+        <li class="entry"><span class="yr">2014</span><div>
+          <span class="t">Bioengineering — Pontificia Universidad Católica de Chile</span>
+          <span class="m"></span></div></li>
+        <li class="entry"><span class="yr">2012</span><div>
+          <span class="t">B.Sc. in Engineering Sciences — Pontificia Universidad Católica de Chile</span>
+          <span class="m">Graduated with maximum distinction.</span></div></li>
+      </ul>
+
+      <h3>Awards</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">—</span><div>
+          <span class="t">Becas Chile scholarship</span>
+          <span class="m">Awarded to pursue doctoral studies abroad.</span></div></li>
+        <li class="entry"><span class="yr">2012</span><div>
+          <span class="t">Maximum distinction, bachelor's degree</span>
+          <span class="m">Pontificia Universidad Católica de Chile.</span></div></li>
+      </ul>
+
+      <h3>Additional training</h3>
+      <p>Deep learning specialization, Massachusetts Institute of Technology, following machine learning training during undergraduate and doctoral studies — skills I now apply daily at the Center for Mathematical Modeling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TALKS & OUTREACH ============ -->
+<section id="talks">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">07 / talks</span></div>
+    <div>
+      <h2>Talks &amp; outreach</h2>
+      <p>My outreach interest is in transferring knowledge from academia to the productive sector: advising Chr. Hansen on correlating organoleptic characteristics with genomic features in yogurt production, developing models for wastewater treatment plants, and leading the bioprocess area at STICTA for two years on scaling up recombinant proteins, biostimulants and nutraceuticals.</p>
+
+      <h3>Conference presentations</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2026</span><div>
+          <span class="t">Decoding ocean biogeographies in the Chilean coast: metabolic drivers revealed by machine learning of metagenomes</span>
+          <span class="m">Oral presentation · Ocean Sciences Meeting, Glasgow, Scotland.</span></div></li>
+        <li class="entry"><span class="yr">2025</span><div>
+          <span class="t">Metabolic functions in prokaryotic samples of Tara Chile</span>
+          <span class="m">Oral presentation · Global Ocean Systems Ecology and Evolution (GOSEE) Chile, Punta Arenas.</span></div></li>
+        <li class="entry"><span class="yr">2025</span><div>
+          <span class="t">Hacia la masificación de la carne cultivada: modelo a escala genómica del metabolismo de células de cerdo</span>
+          <span class="m">Oral presentation · Encuentro de Investigadores Jóvenes, Instituto Milenio Centro de Regulación del Genoma, Santiago.</span></div></li>
+        <li class="entry"><span class="yr">2025</span><div>
+          <span class="t">Constraint-based reconstruction and analysis: a case study with <em>Cyanidioschyzon merolae</em></span>
+          <span class="m">Oral presentation · Pucón Symposium, Puerto Varas, Chile.</span></div></li>
+        <li class="entry"><span class="yr">2025</span><div>
+          <span class="t">A computational platform of porcine cell metabolism for process optimization of cultivated meat production</span>
+          <span class="m">Poster · CARLA 2025, Santiago, Chile.</span></div></li>
+        <li class="entry"><span class="yr">2019</span><div>
+          <span class="t">A systematic assessment of current genome-scale metabolic reconstruction tools</span>
+          <span class="m">Posters · BioSB 2019, Lunteren, The Netherlands · 5th Conference on Constraint-Based Reconstruction and Analysis, Seattle, USA.</span></div></li>
+        <li class="entry"><span class="yr">2015</span><div>
+          <span class="t">Genome-scale metabolic model of <em>Oenococcus oeni</em> and its application to the analysis of malolactic fermentation</span>
+          <span class="m">Oral presentation · Institut des Sciences de la Vigne et du Vin, Université de Bordeaux, France.</span></div></li>
+      </ul>
+
+      <h3>Outreach &amp; applied projects</h3>
+      <ul class="entries">
+        <li class="entry"><span class="yr">2026</span><div>
+          <span class="t">Metabolic Club III — participant, presenter, and instructor</span>
+          <span class="m">International workshop for strengthening research networks. Taught the open course <em>An introduction to genome-scale metabolic reconstructions and mathematical analysis</em>. <a href="https://eventos.cmm.uchile.cl/metabolicclub/2026/01/metabolic-club-3/">Event page</a></span></div></li>
+        <li class="entry"><span class="yr">2024</span><div>
+          <span class="t">Featured interview, <em>Beauchef Magazine</em></span>
+          <span class="m">On the CMM–STICTA collaboration to increase productivity in cultivated meat production.</span></div></li>
+        <li class="entry"><span class="yr">2023</span><div>
+          <span class="t">Television feature, Canal 13</span>
+          <span class="m">On STICTA's mission and its cultivated meat project.</span></div></li>
+        <li class="entry"><span class="yr">2022</span><div>
+          <span class="t">Metabolic modeling course for Eva Balsa-Canto's research group</span>
+          <span class="m">Institute of Marine Research (IIM-CSIC), Spain.</span></div></li>
+        <li class="entry"><span class="yr">2022</span><div>
+          <span class="t">Metabolic model of microbial activity in a wastewater treatment plant</span>
+          <span class="m">PLASMA Proyectos.</span></div></li>
+        <li class="entry"><span class="yr">2022</span><div>
+          <span class="t">Consulting and management of bioreactor installation</span>
+          <span class="m">Universidad de O'Higgins.</span></div></li>
+        <li class="entry"><span class="yr">2021</span><div>
+          <span class="t">Maximum theoretical yields for biostimulant production in <em>Saccharomyces cerevisiae</em></span>
+          <span class="m">Collaborative project with ADAMA Chile and DICTUC.</span></div></li>
+        <li class="entry"><span class="yr">2020</span><div>
+          <span class="t">Machine learning to predict organoleptic properties during yogurt production</span>
+          <span class="m">From the genomes of <em>Lactobacillus bulgaricus</em> and <em>Streptococcus thermophilus</em>. Collaborative project with Chr. Hansen.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="row">
+    <div class="rail"><span class="eyebrow">08 / contact</span></div>
+    <div>
+      <h2>Contact</h2>
+      <p>Center for Mathematical Modeling, Universidad de Chile, Santiago, Chile.<br>
+      <a href="mailto:smendoza@cmm.uchile.cl">smendoza@cmm.uchile.cl</a></p>
+      <p>I am available to supervise undergraduate and graduate thesis students, and open to new collaborations in metabolic modeling, microbial communities and bioprocess optimization.</p>
+      <ul class="links" style="margin-top:1rem;">
+        <li><a href="https://scholar.google.com/citations?user=3rDvuGcAAAAJ&amp;hl=en">google scholar</a></li>
+        <li><a href="https://orcid.org/0000-0002-2192-5569">orcid 0000-0002-2192-5569</a></li>
+        <li><a href="https://www.researchgate.net/profile/Sebastian-Mendoza-4">researchgate</a></li>
+        <li><a href="https://www.linkedin.com/in/snmendoz/">linkedin</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="row">
+    <div class="rail"></div>
+    <div>Sebastián N. Mendoza · Center for Mathematical Modeling, Universidad de Chile · <a href="mailto:smendoza@cmm.uchile.cl">smendoza@cmm.uchile.cl</a></div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var c = document.getElementById('net');
+  if(!c) return;
+  var ctx = c.getContext('2d');
+  var head = c.parentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nodes = [], W = 0, H = 0, dpr = 1, raf = null;
+
+  function accent(){
+    var v = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    return v || '#0F6E63';
+  }
+
+  function seed(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = head.clientWidth; H = head.clientHeight;
+    c.width = Math.floor(W * dpr); c.height = Math.floor(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var count = Math.max(18, Math.min(46, Math.round(W / 34)));
+    nodes = [];
+    for(var i = 0; i < count; i++){
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.11,
+        vy: (Math.random() - 0.5) * 0.11,
+        r: 1.1 + Math.random() * 1.7
+      });
+    }
+  }
+
+  function draw(){
+    var col = accent();
+    ctx.clearRect(0, 0, W, H);
+    var link = Math.min(150, W / 7);
+    ctx.lineWidth = 0.7;
+    for(var i = 0; i < nodes.length; i++){
+      for(var j = i + 1; j < nodes.length; j++){
+        var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+        var d = Math.sqrt(dx*dx + dy*dy);
+        if(d < link){
+          ctx.globalAlpha = (1 - d / link) * 0.17;
+          ctx.strokeStyle = col;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha = 0.26;
+    ctx.fillStyle = col;
+    for(var k = 0; k < nodes.length; k++){
+      ctx.beginPath();
+      ctx.arc(nodes[k].x, nodes[k].y, nodes[k].r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function step(){
+    for(var i = 0; i < nodes.length; i++){
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if(n.x < 0 || n.x > W) n.vx *= -1;
+      if(n.y < 0 || n.y > H) n.vy *= -1;
+    }
+    draw();
+    raf = requestAnimationFrame(step);
+  }
+
+  function start(){
+    if(raf) cancelAnimationFrame(raf);
+    seed();
+    if(reduce){ draw(); } else { step(); }
+  }
+
+  start();
+  var t = null;
+  window.addEventListener('resize', function(){
+    clearTimeout(t);
+    t = setTimeout(start, 180);
+  });
+  if(window.matchMedia){
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if(mq.addEventListener) mq.addEventListener('change', draw);
+  }
+})();
+</script>
+</body>
+</html>
