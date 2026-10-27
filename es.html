@@ -425,9 +425,15 @@ p{margin:0 0 1rem;max-width:68ch;color:var(--ink-2);}
 .event{margin:0 0 2.2rem;}
 .event h3{margin-bottom:.25rem;}
 .event .em{margin:0 0 .9rem;color:var(--muted);font-size:.875rem;max-width:74ch;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin:0;padding:0;list-style:none;align-items:start;}
+/* each <ul> is one row; --r (aspect ratio) sizes items so photos share a height */
+.gallery{display:flex;gap:.75rem;margin:0 0 .75rem;padding:0;list-style:none;}
+.gallery li{flex:var(--r,1) 1 0;min-width:0;}
 .gallery figure{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:.4rem;box-shadow:var(--shadow);}
 .gallery img{display:block;width:100%;height:auto;border-radius:2px;}
+@media (max-width:560px){
+  .gallery{flex-wrap:wrap;}
+  .gallery li{flex:1 1 100%;}
+}
 
 /* ---------- note ---------- */
 .note{
@@ -898,30 +904,32 @@ footer a{color:var(--muted);}
 <div>
 <h2>Vinculación</h2>
 <div class="event">
-<h3>GOSEE Chile 2025 · Punta Arenas, Chile</h3>
-<p class="em">Presentación oral: <em>Metabolic functions in prokaryotic samples of Tara Chile</em>, Instituto Antártico Chileno.</p>
-<ul class="gallery">
-<li><figure><img src="img/gosee-9.jpg" alt="Presentando la charla sobre funciones metabólicas en muestras procariontes de Tara Chile, con la diapositiva de título en pantalla" loading="lazy" width="1600" height="1200"/></figure></li>
-<li><figure><img src="img/gosee-7.jpg" alt="Presentando en el podio junto a un letrero del Instituto Antártico Chileno" loading="lazy" width="1200" height="1600"/></figure></li>
-<li><figure><img src="img/gosee-8.jpg" alt="Sonriendo durante la presentación en el podio, junto a un letrero del Instituto Antártico Chileno" loading="lazy" width="1200" height="1600"/></figure></li>
-</ul>
-</div>
-<div class="event">
 <h3>Ocean Sciences Meeting 2026 (OSM26) · Glasgow, Escocia</h3>
 <p class="em">Presentación oral: <em>Decoding ocean biogeographies in the Chilean coast: metabolic drivers revealed by machine learning of metagenomes</em>, 26 de febrero de 2026.</p>
 <ul class="gallery">
-<li><figure><img src="img/osm26-4.jpg" alt="Presentando en OSM26 frente a una diapositiva sobre la expedición Tara Oceans" loading="lazy" width="1600" height="1200"/></figure></li>
-<li><figure><img src="img/osm26-3.jpg" alt="Presentando en OSM26 frente a una diapositiva con cinco macroprovincias en un dendrograma" loading="lazy" width="1600" height="1200"/></figure></li>
-<li><figure><img src="img/osm26-5.jpg" alt="Presentando en OSM26 junto a la diapositiva de título de la charla" loading="lazy" width="1200" height="1600"/></figure></li>
-<li><figure><img src="img/osm26-6.jpg" alt="Junto a tres colegas frente al letrero OSM en el Ocean Sciences Meeting 2026" loading="lazy" width="1200" height="1600"/></figure></li>
+<li style="--r:0.75"><figure><img src="img/osm26-5.jpg" alt="Presentando en OSM26 junto a la diapositiva de título de la charla" loading="lazy" width="1200" height="1600"/></figure></li>
+<li style="--r:1.333"><figure><img src="img/osm26-4.jpg" alt="Presentando en OSM26 frente a una diapositiva sobre la expedición Tara Oceans" loading="lazy" width="1600" height="1200"/></figure></li>
+</ul>
+<ul class="gallery">
+<li style="--r:1.333"><figure><img src="img/osm26-3.jpg" alt="Presentando en OSM26 frente a una diapositiva con cinco macroprovincias en un dendrograma" loading="lazy" width="1600" height="1200"/></figure></li>
+<li style="--r:0.75"><figure><img src="img/osm26-6.jpg" alt="Junto a tres colegas frente al letrero OSM en el Ocean Sciences Meeting 2026" loading="lazy" width="1200" height="1600"/></figure></li>
 </ul>
 </div>
 <div class="event">
 <h3>Metabolic Club III · 2026</h3>
 <p class="em">Taller internacional para fortalecer redes de investigación, Universidad de Chile. <a href="https://eventos.cmm.uchile.cl/metabolicclub/2026/01/metabolic-club-3/">Página del evento</a></p>
 <ul class="gallery">
-<li><figure><img src="img/metabolic-club-iii-1.jpg" alt="Foto grupal de participantes de Metabolic Club III al aire libre, de pie y en cuclillas sobre el pasto frente a un árbol" loading="lazy" width="1280" height="720"/></figure></li>
-<li><figure><img src="img/metabolic-club-iii-2.jpg" alt="Foto grupal de participantes de Metabolic Club III en las escalinatas frente a un edificio de vidrio" loading="lazy" width="1600" height="826"/></figure></li>
+<li style="--r:1.778"><figure><img src="img/metabolic-club-iii-1.jpg" alt="Foto grupal de participantes de Metabolic Club III al aire libre, de pie y en cuclillas sobre el pasto frente a un árbol" loading="lazy" width="1280" height="720"/></figure></li>
+<li style="--r:1.937"><figure><img src="img/metabolic-club-iii-2.jpg" alt="Foto grupal de participantes de Metabolic Club III en las escalinatas frente a un edificio de vidrio" loading="lazy" width="1600" height="826"/></figure></li>
+</ul>
+</div>
+<div class="event">
+<h3>GOSEE Chile 2025 · Punta Arenas, Chile</h3>
+<p class="em">Presentación oral: <em>Metabolic functions in prokaryotic samples of Tara Chile</em>, Instituto Antártico Chileno.</p>
+<ul class="gallery">
+<li style="--r:1.333"><figure><img src="img/gosee-9.jpg" alt="Presentando la charla sobre funciones metabólicas en muestras procariontes de Tara Chile, con la diapositiva de título en pantalla" loading="lazy" width="1600" height="1200"/></figure></li>
+<li style="--r:0.75"><figure><img src="img/gosee-7.jpg" alt="Presentando en el podio junto a un letrero del Instituto Antártico Chileno" loading="lazy" width="1200" height="1600"/></figure></li>
+<li style="--r:0.75"><figure><img src="img/gosee-8.jpg" alt="Sonriendo durante la presentación en el podio, junto a un letrero del Instituto Antártico Chileno" loading="lazy" width="1200" height="1600"/></figure></li>
 </ul>
 </div>
 </div>
